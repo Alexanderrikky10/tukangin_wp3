@@ -4,6 +4,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Tukangin extends CI_Controller
 {
 
+    public function index()
+    {
+        redirect('tukangin/home');
+    }
+
     public function home()
     {
 
