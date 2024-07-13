@@ -11,7 +11,6 @@ class Tukangin extends CI_Controller
 
     public function home()
     {
-
         $data['title'] = 'Home';
         $this->load->view('template/v-header');
         $this->load->view('template/v-hiro');

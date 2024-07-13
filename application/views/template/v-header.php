@@ -50,7 +50,6 @@
 
             <nav id="navmenu" class="navmenu">
                 <?php $menu = $this->uri->segment(2); ?>
-                <?php $menu1 = $this->uri->segment(1); ?>
                 <ul>
                     <li>
                         <a class="<?php if ($menu == 'home') {
