@@ -49,37 +49,36 @@
             </a>
 
             <nav id="navmenu" class="navmenu">
-                <?php $menu = $this->uri->segment(2); ?>
                 <ul>
                     <li>
-                        <a class="<?php if ($menu == 'home') {
+                        <a class="<?php if ($title == 'Home') {
                                         echo "active";
                                     }  ?>" href="<?= base_url('tukangin/home') ?>">Home</a>
                     </li>
                     <li>
-                        <a class="<?php if ($menu == 'about') {
+                        <a class="<?php if ($title == 'About') {
                                         echo "active";
                                     }  ?>" href="<?= base_url('tukangin/about') ?>">About</a>
                     </li>
 
                     <li>
-                        <a class="<?php if ($menu == 'services') {
+                        <a class="<?php if ($title == 'Services') {
                                         echo "active";
                                     }  ?>" href="<?= base_url('tukangin/services') ?>">Service</a>
                     </li>
 
                     <li>
-                        <a class="<?php if ($menu == 'project') {
+                        <a class="<?php if ($title == 'Project') {
                                         echo "active";
                                     }  ?>" href="<?= base_url('tukangin/project') ?>">Projects</a>
                     </li>
                     <li>
-                        <a class="<?php if ($menu == 'blog') {
+                        <a class="<?php if ($title == 'Blog') {
                                         echo "active";
                                     }  ?>" href="<?= base_url('tukangin/blog') ?>">Blog</a>
                     </li>
                     <li>
-                        <a class="<?php if ($menu == 'contact') {
+                        <a class="<?php if ($title == 'Contact') {
                                         echo "active";
                                     }  ?>" href="<?= base_url('tukangin/contact') ?>">Contact</a>
                     </li>
