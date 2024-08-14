@@ -7,10 +7,7 @@
 					<div class="col-lg-6 text-center">
 						<h2>Welcome to Tukangin</h2>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-							eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-							enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat.
+							Selamat datang di dalam flatprom tukangin penyedia jasa pertukangan berbasis web, siap melayani setiap keluhan anda di dalam pembangunan inprastruktur
 						</p>
 						<a href="#get-started" class="btn-get-started">Get Started</a>
 					</div>

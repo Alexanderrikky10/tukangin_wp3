@@ -28,13 +28,6 @@
     <!-- Main CSS File -->
     <link href="<?= base_url('assets/') ?>css/main.css" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: UpConstruction
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -42,7 +35,7 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <img src="<?= base_url('assets/') ?>img/logo-1.png" alt="">
                 <h1 class="sitename">Tukangin</h1> <span>.</span>
@@ -84,6 +77,8 @@
                     </li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
+
             </nav>
 
         </div>
