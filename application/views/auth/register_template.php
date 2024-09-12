@@ -5,8 +5,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/') ?>/img/apple-icon.png" />
-    <link rel="icon" type="image/png" href="<?= base_url('assets/') ?>/img/favicon.png" />
-    <title>Material Dashboard 2 by Creative Tim</title>
+    <!-- <link rel="icon" type="image/png" href="<?= base_url('assets/') ?>/img/favicon.png" /> -->
+    <link href="<?= base_url('assets/') ?>img/logo-1.png" rel="icon">
+    <title>Form registered</title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Nucleo Icons -->

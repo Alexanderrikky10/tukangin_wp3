@@ -9,7 +9,7 @@
 						<p>
 							Selamat datang di dalam flatprom tukangin penyedia jasa pertukangan berbasis web, siap melayani setiap keluhan anda di dalam pembangunan inprastruktur
 						</p>
-						<a href="#get-started" class="btn-get-started">Get Started</a>
+						<a href="<?= base_url('tukangin/services') ?>" class="btn-get-started">Get Started</a>
 					</div>
 				</div>
 			</div>
@@ -91,14 +91,12 @@
 							<div class="col-12">
 								<textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
 							</div>
-
 							<div class="col-12 text-center">
 								<div class="loading">Loading</div>
 								<div class="error-message"></div>
 								<div class="sent-message">
 									Your quote request has been sent successfully. Thank you!
 								</div>
-
 								<button type="submit">Get a quote</button>
 							</div>
 						</div>
@@ -458,6 +456,7 @@
 										Duis aute irure dolor in reprehenderit in voluptate trideta
 										storacalaperda mastiro dolore eu fugiat nulla
 										pariatur.</span>
+									<!-- jangan lupa di gunkan fungtion baru  -->
 								</li>
 							</ul>
 						</div>
