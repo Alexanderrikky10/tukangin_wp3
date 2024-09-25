@@ -77,7 +77,7 @@
                     </li>
                     <li class="dropdown ms-5">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $user['name']; ?></span>
                             <img class="img-profile rounded-circle ms-2" height="30" width="30" src="<?= base_url('assets/img/logo-1.png') ?>" />
                         </a>
                         <ul class="dropdown-menu">
