@@ -9,6 +9,7 @@ class Tukangin extends CI_Controller
         $this->load->model('Model_users');
         $this->load->model('Model_services');
         $this->load->model('Model_project');
+        $this->load->model('Model_test');
     }
 
     public function index()
@@ -21,6 +22,7 @@ class Tukangin extends CI_Controller
         $data['title'] = 'Home';
         $data['services'] = $this->Model_services->getServices()->result_array();
         $data['project'] = $this->Model_project->getProject()->result_array();
+        $data['test'] = $this->Model_test->getTest()->result_array();
         $data['user'] = $this->Model_users->cekData(['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('template/v-header', $data);
         $this->load->view('template/v-hiro', $data);

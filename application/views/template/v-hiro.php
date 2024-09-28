@@ -47,66 +47,6 @@
 	</section>
 	<!-- /Hero Section -->
 
-	<!-- Get Started Section -->
-	<section id="get-started" class="get-started section">
-		<div class="container">
-			<div class="row justify-content-between gy-4">
-				<div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-					<div class="content">
-						<h3>Minus hic non reiciendis ea possimus at quia.</h3>
-						<p>
-							Rem id rerum. Debitis deserunt quidem delectus expedita ducimus
-							dolor. Aut iusto ipsa. Eos ipsum nobis ipsa soluta itaque
-							perspiciatis fuga ipsum perspiciatis. Eum amet fugiat totam nisi
-							possimus ut delectus dicta.
-						</p>
-						<p>
-							Aliquam velit deserunt autem. Inventore et saepe. Tenetur suscipit
-							eligendi labore culpa eos. Deserunt porro magni qui necessitatibus
-							dolorem at animi cupiditate.
-						</p>
-					</div>
-				</div>
-
-				<div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-					<form action="forms/quote.php" method="post" class="php-email-form">
-						<h3>Get a quote</h3>
-						<p>
-							Vel nobis odio laboriosam et hic voluptatem. Inventore vitae
-							totam. Rerum repellendus enim linead sero park flows.
-						</p>
-						<div class="row gy-3">
-							<div class="col-12">
-								<input type="text" name="name" class="form-control" placeholder="Name" required="" />
-							</div>
-
-							<div class="col-12">
-								<input type="email" class="form-control" name="email" placeholder="Email" required="" />
-							</div>
-
-							<div class="col-12">
-								<input type="text" class="form-control" name="phone" placeholder="Phone" required="" />
-							</div>
-
-							<div class="col-12">
-								<textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-							</div>
-							<div class="col-12 text-center">
-								<div class="loading">Loading</div>
-								<div class="error-message"></div>
-								<div class="sent-message">
-									Your quote request has been sent successfully. Thank you!
-								</div>
-								<button type="submit">Get a quote</button>
-							</div>
-						</div>
-					</form>
-				</div>
-				<!-- End Quote Form -->
-			</div>
-		</div>
-	</section>
-	<!-- /Get Started Section -->
 
 	<!-- Constructions Section -->
 	<section id="constructions" class="constructions section">
@@ -234,6 +174,8 @@
 		</div>
 		<!-- End Section Title -->
 
+		<!-- /Services Section -->
+
 		<div class="container">
 			<div class="row gy-4">
 
@@ -249,80 +191,12 @@
 						</div>
 					</div>
 				<?php endforeach ?>
-				<!-- End Service Item -->
+
 			</div>
 		</div>
 	</section>
-	<!-- /Services Section -->
+	<!-- /Services end -->
 
-	<!-- Alt Services Section -->
-	<section id="alt-services" class="alt-services section">
-		<div class="container">
-			<div class="row justify-content-around gy-4">
-				<div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
-					<img src="<?= base_url('assets/') ?>img/alt-services.jpg" alt="" />
-				</div>
-
-				<div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-					<h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-					<p>
-						Esse voluptas cumque vel exercitationem. Reiciendis est hic
-						accusamus. Non ipsam et sed minima temporibus laudantium. Soluta
-						voluptate sed facere corporis dolores excepturi
-					</p>
-
-					<div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
-						<i class="bi bi-easel flex-shrink-0"></i>
-						<div>
-							<h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-							<p>
-								Voluptatum deleniti atque corrupti quos dolores et quas
-								molestias excepturi sint occaecati cupiditate non provident
-							</p>
-						</div>
-					</div>
-					<!-- End Icon Box -->
-
-					<div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
-						<i class="bi bi-patch-check flex-shrink-0"></i>
-						<div>
-							<h4><a href="" class="stretched-link">Nemo Enim</a></h4>
-							<p>
-								At vero eos et accusamus et iusto odio dignissimos ducimus qui
-								blanditiis praesentium voluptatum deleniti atque
-							</p>
-						</div>
-					</div>
-					<!-- End Icon Box -->
-
-					<div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
-						<i class="bi bi-brightness-high flex-shrink-0"></i>
-						<div>
-							<h4><a href="" class="stretched-link">Dine Pad</a></h4>
-							<p>
-								Explicabo est voluptatum asperiores consequatur magnam. Et
-								veritatis odit. Sunt aut deserunt minus aut eligendi omnis
-							</p>
-						</div>
-					</div>
-					<!-- End Icon Box -->
-
-					<div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
-						<i class="bi bi-brightness-high flex-shrink-0"></i>
-						<div>
-							<h4><a href="" class="stretched-link">Tride clov</a></h4>
-							<p>
-								Est voluptatem labore deleniti quis a delectus et. Saepe dolorem
-								libero sit non aspernatur odit amet. Et eligendi
-							</p>
-						</div>
-					</div>
-					<!-- End Icon Box -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- /Alt Services Section -->
 
 	<!-- Features Section -->
 	<section id="features" class="features section">
@@ -594,113 +468,30 @@
 					}
 				</script>
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="testimonial-wrap">
-							<div class="testimonial-item">
-								<img src="<?= base_url('assets/') ?>img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
-								<h3>Saul Goodman</h3>
-								<h4>Ceo &amp; Founder</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Proin iaculis purus consequat sem cure digni ssim donec
-										porttitora entum suscipit rhoncus. Accusantium quam,
-										ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-										risus at semper.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
-							</div>
-						</div>
-					</div>
+
+
+
 					<!-- End testimonial item -->
 
-					<div class="swiper-slide">
-						<div class="testimonial-wrap">
-							<div class="testimonial-item">
-								<img src="<?= base_url('assets/') ?>img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-								<h3>Sara Wilsson</h3>
-								<h4>Designer</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+					<?php foreach ($test as $ts) : ?>
+						<div class="swiper-slide">
+							<div class="testimonial-wrap">
+								<div class="testimonial-item">
+									<img src="<?= base_url('assets/img/testimonials/') . $ts['img'] ?>" class="testimonial-img" alt="" />
+									<h3><?= $ts['name_user'] ?></h3>
+									<h4><?= $ts['jabatan'] ?></h4>
+									<div class="stars">
+										<?= $ts['bintang'] ?>
+									</div>
+									<p>
+										<i class="bi bi-quote quote-icon-left"></i>
+										<span><?= $ts['komentar'] ?></span>
+										<i class="bi bi-quote quote-icon-right"></i>
+									</p>
 								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Export tempor illum tamen malis malis eram quae irure esse
-										labore quem cillum quid cillum eram malis quorum velit fore
-										eram velit sunt aliqua noster fugiat irure amet legam anim
-										culpa.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
 							</div>
 						</div>
-					</div>
-					<!-- End testimonial item -->
-
-					<div class="swiper-slide">
-						<div class="testimonial-wrap">
-							<div class="testimonial-item">
-								<img src="<?= base_url('assets/') ?>img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-								<h3>Jena Karlis</h3>
-								<h4>Store Owner</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Enim nisi quem export duis labore cillum quae magna enim
-										sint quorum nulla quem veniam duis minim tempor labore quem
-										eram duis noster aute amet eram fore quis sint minim.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
-							</div>
-						</div>
-					</div>
-					<!-- End testimonial item -->
-
-					<div class="swiper-slide">
-						<div class="testimonial-wrap">
-							<div class="testimonial-item">
-								<img src="<?= base_url('assets/') ?>img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
-								<h3>Matt Brandon</h3>
-								<h4>Freelancer</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-										multos export minim fugiat minim velit minim dolor enim duis
-										veniam ipsum anim magna sunt elit fore quem dolore labore
-										illum veniam.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
-							</div>
-						</div>
-					</div>
-					<!-- End testimonial item -->
-
-					<div class="swiper-slide">
-						<div class="testimonial-wrap">
-							<div class="testimonial-item">
-								<img src="<?= base_url('assets/') ?>img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
-								<h3>John Larson</h3>
-								<h4>Entrepreneur</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Quis quorum aliqua sint quem legam fore sunt eram irure
-										aliqua veniam tempor noster veniam enim culpa labore duis
-										sunt culpa nulla illum cillum fugiat legam esse veniam culpa
-										fore nisi cillum quid.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
-							</div>
-						</div>
-					</div>
+					<?php endforeach ?>
 					<!-- End testimonial item -->
 				</div>
 				<div class="swiper-pagination"></div>
