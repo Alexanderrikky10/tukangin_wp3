@@ -26,7 +26,26 @@
                                 </div>
                                 <h3><?= $sv['title'] ?></h3>
                                 <p><?= $sv['deskripsi'] ?></p>
-                                <a href="" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#ExtralargeModal<?= $sv['id'] ?>" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="ExtralargeModal<?= $sv['id'] ?>" tabindex="-1">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title"><?= $sv['title'] ?></h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="col-6"><?= $sv['deskripsi'] ?></p>
+                                        <p>Total Harga Barang Rp.<?= number_format($sv['harga']); ?></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach ?>
@@ -35,6 +54,12 @@
 
             </div>
         </section><!-- /Services Section -->
+
+
+
+
+
+
 
         <!-- Features Cards Section -->
         <section id="features-cards" class="features-cards section">

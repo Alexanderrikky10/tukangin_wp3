@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="apple-touch-icon" sizes="76x76" href="<?= base_url('assets/') ?>img/apple-icon.png" />
     <link rel="icon" type="image/png" href="<?= base_url('assets/') ?>img/logo-1.png" />
-    <title>Login Page</title>
+    <title>Tukangin | <?= $title ?></title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
     <!-- Nucleo Icons -->
@@ -34,6 +34,7 @@
     <script src="<?= base_url('assets/') ?>js/core/bootstrap.min.js"></script>
     <script src="<?= base_url('assets/') ?>js/plugins/perfect-scrollbar.min.js"></script>
     <script src="<?= base_url('assets/') ?>js/plugins/smooth-scrollbar.min.js"></script>
+    <script script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         var win = navigator.platform.indexOf("Win") > -1;
         if (win && document.querySelector("#sidenav-scrollbar")) {
@@ -42,6 +43,11 @@
             };
             Scrollbar.init(document.querySelector("#sidenav-scrollbar"), options);
         }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.alert-message').alert().delay(1500).slideUp('slow');
+        });
     </script>
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

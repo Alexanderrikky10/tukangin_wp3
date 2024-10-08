@@ -44,7 +44,7 @@ class Tukangin extends CI_Controller
         $data['services'] = $this->Model_services->getServices()->result_array();
         $data['user'] = $this->Model_users->cekData(['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('template/v-header', $data);
-        $this->load->view('template/v-services');
+        $this->load->view('template/v-services', $data);
         $this->load->view('template/v-footer');
     }
 
@@ -72,6 +72,14 @@ class Tukangin extends CI_Controller
         $data['user'] = $this->Model_users->cekData(['email' => $this->session->userdata('email')])->row_array();
         $this->load->view('template/v-header', $data);
         $this->load->view('template/v-contact');
+        $this->load->view('template/v-footer');
+    }
+    public function profile()
+    {
+        $data['title'] = 'Profile';
+        $data['user'] = $this->Model_users->cekData(['email' => $this->session->userdata('email')])->row_array();
+        $this->load->view('template/v-header', $data);
+        $this->load->view('template/v-profile', $data);
         $this->load->view('template/v-footer');
     }
 }

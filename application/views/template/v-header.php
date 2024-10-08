@@ -77,7 +77,7 @@
                     </li>
                     <li class="dropdown ms-5"><a><span><?= $user['name']; ?></span> <img class="img-profile rounded-circle ms-2" height="30" width="30" src="<?= base_url('assets/img/profile/') . $user['image'] ?>" /> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a class="dropdown-item" href="<?= base_url('tukangin/home') ?>"><i class="bi bi-person-circle me-2"></i></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('tukangin/profile') ?>"><i class="bi bi-person-circle me-2"></i></i>Profile</a></li>
                             <li><a class="dropdown-item" href="<?= base_url('auth/logout') ?>"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
                         </ul>
                     </li>

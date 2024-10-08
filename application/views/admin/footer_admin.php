@@ -22,9 +22,17 @@
     <script src="<?= base_url('assets/') ?>admin/vendor/simple-datatables/simple-datatables.js"></script>
     <script src="<?= base_url('assets/') ?>admin/vendor/tinymce/tinymce.min.js"></script>
     <script src="<?= base_url('assets/') ?>admin/vendor/php-email-form/validate.js"></script>
-
+    <script script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Template Main JS File -->
     <script src="<?= base_url('assets/') ?>admin/js/main.js"></script>
+
+    <!-- popup untuk flash massage -->
+
+    <script>
+        $(document).ready(function() {
+            $('.alert-message').alert().delay(1500).slideUp('slow');
+        });
+    </script>
 
     </body>
 
