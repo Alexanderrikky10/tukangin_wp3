@@ -17,6 +17,11 @@ class Model_services extends CI_Model
     {
         return $this->db->get('jasa');
     }
+
+    public function metodeBayar()
+    {
+        return $this->db->get('metode_bayar');
+    }
 }
 
 /* End of file: Model_services.php */

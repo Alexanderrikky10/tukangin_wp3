@@ -162,41 +162,6 @@
 	</section>
 	<!-- /Constructions Section -->
 
-	<!-- Services Section -->
-	<section id="services" class="services section light-background">
-		<!-- Section Title -->
-		<div class="container section-title" data-aos="fade-up">
-			<h2>Services</h2>
-			<p>
-				Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-				consectetur velit
-			</p>
-		</div>
-		<!-- End Section Title -->
-
-		<!-- /Services Section -->
-
-		<div class="container">
-			<div class="row gy-4">
-
-				<?php foreach ($services as $sv) : ?>
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-						<div class="service-item  position-relative">
-							<div class="icon">
-								<i class="<?= $sv['icon'] ?>"></i>
-							</div>
-							<h3><?= $sv['title'] ?></h3>
-							<p><?= $sv['deskripsi'] ?></p>
-							<a href="" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				<?php endforeach ?>
-
-			</div>
-		</div>
-	</section>
-	<!-- /Services end -->
-
 
 	<!-- Features Section -->
 	<section id="features" class="features section">

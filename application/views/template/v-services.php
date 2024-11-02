@@ -16,6 +16,7 @@
         <section id="services" class="services section light-background">
 
             <div class="container">
+                <?= $this->session->flashdata('message'); ?>
 
                 <div class="row gy-4">
                     <?php foreach ($services as $sv) : ?>
@@ -26,25 +27,113 @@
                                 </div>
                                 <h3><?= $sv['title'] ?></h3>
                                 <p><?= $sv['deskripsi'] ?></p>
-                                <a href="" data-bs-toggle="modal" data-bs-target="#ExtralargeModal<?= $sv['id'] ?>" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
+                                <a href="" data-bs-toggle="modal" data-bs-target="#cekOutModal<?= $sv['id'] ?>" class="readmore stretched-link">Pesan <i class="bi bi-arrow-right"></i></a>
                             </div>
                         </div>
 
-                        <div class="modal fade" id="ExtralargeModal<?= $sv['id'] ?>" tabindex="-1">
+                        <!-- modal cekout -->
+
+                        <div class="modal fade" id="cekOutModal<?= $sv['id'] ?>" tabindex="-1" action="<?= base_url('tukangin/services'); ?>" method="post" enctype="multipart/form-data">
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title"><?= $sv['title'] ?></h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">
-                                        <p class="col-6"><?= $sv['deskripsi'] ?></p>
-                                        <p>Total Harga Barang Rp.<?= number_format($sv['harga']); ?></p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                    </div>
+                                    <form action="<?= base_url('tukangin/services'); ?>" method="post" enctype="multipart/form-data">
+                                        <div class="modal-body" x-data="{ count: 1, pekerja: 1, harga: <?= $sv['harga'] ?>, 
+                                        get price() {
+                                            return this.pekerja*this.harga
+                                        },
+                                        get total() { 
+                                            return this.count * (this.pekerja*this.harga) }, }">
+
+                                            <div class="row">
+                                                <!-- image show -->
+
+                                                <div class="col-xl-4">
+
+                                                    <div class="card" style="width: 18rem;">
+                                                        <img src="<?= base_url('assets/img/jasa/') . $sv['img'] ?>" class="card-img-top" alt="...">
+                                                        <div class="card-body d-flex justify-content-center">
+                                                            <div class="text-nowrap">
+                                                                <span x-text="rupiah(price)"></span>
+                                                                <button id="remove" @click.prevent="if (count > 1) count--">&minus;</button>
+                                                                <span x-text="count"></span>
+                                                                <input type="hidden" name="jam" id="jam" x-bind:value="count">
+                                                                <button id="add" @click.prevent="if (count < 8) count++">&plus;</button> =
+                                                                <span x-text="rupiah(total)"></span>
+                                                                <input type="hidden" name="total_bayar" id="total_bayar" x-bind:value="total">
+                                                            </div>
+                                                        </div>
+                                                        <span style="margin-left: 83px;">Jumlah Pekerja</span>
+                                                        <div class="card-body d-flex justify-content-center">
+                                                            <div class="text-nowrap">
+                                                                <button id="remove" @click.prevent="if (pekerja > 1) pekerja--">&minus;</button>
+                                                                <span x-text="pekerja"></span>
+                                                                <input type="hidden" name="pekerja" id="pekerja" x-bind:value="pekerja">
+                                                                <button id="add" @click.prevent="if (pekerja < 8) pekerja++">&plus;</button>
+                                                                <span>Orang</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-xl-8">
+                                                    <h5 class="ms-2">From Cek Out</h5>
+                                                    <div class="card p-3">
+                                                        <div class="mb-3">
+                                                            <label for="email" class="form-label ms-2">Email address</label>
+                                                            <input type="email" class="form-control" name="email" id="email" value="<?= $user['email'] ?>" readonly>
+                                                        </div>
+                                                        <input type="hidden" name="nama_jasa" id="nama_jasa" value="<?= $sv['title'] ?>">
+
+                                                        <div class="mb-3">
+                                                            <label for="nama" class="form-label ms-2">Nama</label>
+                                                            <input type="text" class="form-control" name="name" id="name" placeholder="Masukan Nama Anda">
+                                                        </div>
+
+                                                        <label for="Metode Bayar" class="form-label ms-2">Metode Pembayaran</label>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                                                <select name="metode" id="metode" class="metode-bayar form-select mb-3" aria-label="Default select Metode Bayar">
+                                                                    <option selected>pilih pembayaran</option>
+                                                                    <?php foreach ($metode as $m) : ?>
+                                                                        <option value="<?= $m['id']; ?>" data-rekening="<?= $m['rekening']; ?>"> <?= $m['m_bayar']; ?></option>
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="rekening-bayar form-control" placeholder="Rekening" readonly>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="mb-3">
+                                                            <label for="alamat" class="form-label ms-2">Alamat</label>
+                                                            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="Masukan Alamat Anda">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="nomor" class="form-label ms-2">Nomor Telpon</label>
+                                                            <input type="number" class="form-control" name="nomor" id="nomor" placeholder="081234***">
+                                                        </div>
+                                                        <!-- <div class="form-group">
+                                                            <input name="image" id="image" type="file" class="form-control form-control-user">
+                                                        </div> -->
+                                                        <div class="form-group">
+                                                            <input name="image" id="image" type="file" class="form-control form-control-user" id="image" name="image">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Order Now</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -54,9 +143,6 @@
 
             </div>
         </section><!-- /Services Section -->
-
-
-
 
 
 
@@ -156,113 +242,30 @@
                         }
                     </script>
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="<?= base_url('assets/') ?>img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
-                                    <h3>Saul Goodman</h3>
-                                    <h4>Ceo &amp; Founder</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Proin iaculis purus consequat sem cure digni ssim donec
-                                            porttitora entum suscipit rhoncus. Accusantium quam,
-                                            ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                            risus at semper.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+
+
+
                         <!-- End testimonial item -->
 
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="<?= base_url('assets/') ?>img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-                                    <h3>Sara Wilsson</h3>
-                                    <h4>Designer</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        <?php foreach ($test as $ts) : ?>
+                            <div class="swiper-slide">
+                                <div class="testimonial-wrap">
+                                    <div class="testimonial-item">
+                                        <img src="<?= base_url('assets/img/testimonials/') . $ts['img'] ?>" class="testimonial-img" alt="" />
+                                        <h3><?= $ts['name_user'] ?></h3>
+                                        <h4><?= $ts['jabatan'] ?></h4>
+                                        <div class="stars">
+                                            <?= $ts['bintang'] ?>
+                                        </div>
+                                        <p>
+                                            <i class="bi bi-quote quote-icon-left"></i>
+                                            <span><?= $ts['komentar'] ?></span>
+                                            <i class="bi bi-quote quote-icon-right"></i>
+                                        </p>
                                     </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Export tempor illum tamen malis malis eram quae irure esse
-                                            labore quem cillum quid cillum eram malis quorum velit fore
-                                            eram velit sunt aliqua noster fugiat irure amet legam anim
-                                            culpa.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
                                 </div>
                             </div>
-                        </div>
-                        <!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="<?= base_url('assets/') ?>img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-                                    <h3>Jena Karlis</h3>
-                                    <h4>Store Owner</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Enim nisi quem export duis labore cillum quae magna enim
-                                            sint quorum nulla quem veniam duis minim tempor labore quem
-                                            eram duis noster aute amet eram fore quis sint minim.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="<?= base_url('assets/') ?>img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
-                                    <h3>Matt Brandon</h3>
-                                    <h4>Freelancer</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                                            multos export minim fugiat minim velit minim dolor enim duis
-                                            veniam ipsum anim magna sunt elit fore quem dolore labore
-                                            illum veniam.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End testimonial item -->
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-wrap">
-                                <div class="testimonial-item">
-                                    <img src="<?= base_url('assets/') ?>img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
-                                    <h3>John Larson</h3>
-                                    <h4>Entrepreneur</h4>
-                                    <div class="stars">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                    </div>
-                                    <p>
-                                        <i class="bi bi-quote quote-icon-left"></i>
-                                        <span>Quis quorum aliqua sint quem legam fore sunt eram irure
-                                            aliqua veniam tempor noster veniam enim culpa labore duis
-                                            sunt culpa nulla illum cillum fugiat legam esse veniam culpa
-                                            fore nisi cillum quid.</span>
-                                        <i class="bi bi-quote quote-icon-right"></i>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php endforeach ?>
                         <!-- End testimonial item -->
                     </div>
                     <div class="swiper-pagination"></div>

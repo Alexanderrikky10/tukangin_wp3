@@ -25,6 +25,23 @@ class Model_users extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+
+    public function simpanTransaksi($data = null)
+    {
+        $this->db->insert('transaksi', $data);
+    }
+
+
+    public function transaksiById($email)
+    {
+        // Melakukan JOIN antara tabel transaksi dan metode_bayar
+        $this->db->select('transaksi.*, metode_bayar.m_bayar'); // Memilih kolom dari transaksi dan mengganti metode dengan m_bayar
+        $this->db->from('transaksi');
+        $this->db->join('metode_bayar', 'transaksi.metode = metode_bayar.id', 'left'); // Join dengan tabel metode_bayar berdasarkan id metode
+        $this->db->where('transaksi.email', $email); // Mengambil transaksi berdasarkan email
+        $query = $this->db->get(); // Menjalankan query
+        return $query->result_array(); // Mengembalikan data dalam bentuk array
+    }
 }
 
 /* End of file: Model_users.php */

@@ -94,12 +94,36 @@
     <script script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.alert-message').alert().delay(1500).slideUp('slow');
+            $('.alert-message').alert().delay(2500).slideUp('slow');
+        });
+    </script>
+
+
+    <!-- menampilkan rekening di menu services -->
+
+    <script>
+        $(document).ready(function() {
+            // Event handler untuk dropdown metode pembayaran pada semua elemen dengan kelas 'metode-bayar'
+            $('.metode-bayar').on('change', function() {
+                // Ambil rekening dari option yang dipilih
+                var rekening = $(this).find(':selected').data('rekening');
+                // Cari input rekening yang berada di dalam satu div/form-group yang sama
+                $(this).closest('.form-group').find('.rekening-bayar').val(rekening);
+            });
         });
     </script>
     <!-- Main JS File -->
     <script src="<?= base_url('assets/') ?>js/main.js"></script>
-
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script>
+        const rupiah = (Number) => {
+            return new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0,
+            }).format(Number);
+        };
+    </script>
     </body>
 
     </html>
