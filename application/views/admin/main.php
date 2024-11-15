@@ -22,12 +22,25 @@
                                         <tr>
                                             <td><?= $no; ?></td>
                                             <td>
-                                                <a class="btn-link" href="<?= base_url('admin/detailT/' . $t->id); ?>"><?= $t->id ?></a>
+                                                <a class="btn-link" href="<?= base_url('admin/detailPesanan/' . $t->id); ?>"><?= $t->id ?></a>
                                             </td>
-                                            <td><?= date('l, d F Y', $t->tgl); ?></td>
+                                            <td><?= date("d-m-Y", $t->tgl); ?></td>
                                             <td><?= $t->email; ?></td>
 
-                                            <form action="" method="post">
+                                            <form action="<?= base_url('admin/transaksiAct/') . $t->id; ?>" method="post">
+                                                <!-- data yang akan di post -->
+                                                <input type="hidden" name="nama_jasa" id="nama_jasa" value="<?= $t->nama_jasa ?>">
+                                                <input type="hidden" name="jam" id="jam" value="<?= $t->jam ?>">
+                                                <input type="hidden" name="name" id="name" value="<?= $t->name ?>">
+                                                <input type="hidden" name="pekerja" id="pekerja" value="<?= $t->pekerja ?>">
+                                                <input type="hidden" name="total_bayar" id="total_bayar" value="<?= $t->total_bayar ?>">
+                                                <input type="hidden" name="email" id="email" value="<?= $t->email ?>">
+                                                <input type="hidden" name="alamat" id="alamat" <?= $t->alamat ?>>
+                                                <input type="hidden" name="m_bayar" id="m_bayar" value="<?= $t->metode ?>">
+                                                <input type="hidden" name="nomor" id="nomor" value="<?= $t->nomor ?>">
+                                                <input type="hidden" name="image" id="image" value="<?= $t->image ?>">
+                                                <input type="hidden" name="tgl" id="tgl" value="<?= $t->tgl ?>">
+                                                <!-- end data post -->
                                                 <td nowrap>
                                                     <button type="submit" class="btn btn-sm btn-outline-info"><i class="bi bi-check-circle-fill"></i> </i>Konfimasi</button>
                                                 </td>

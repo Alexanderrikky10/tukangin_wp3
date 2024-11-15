@@ -7,7 +7,7 @@
 					<div class="col-lg-6 text-center">
 						<h2>Welcome to Tukangin</h2>
 						<p>
-							Selamat datang di dalam flatprom tukangin penyedia jasa pertukangan berbasis web, siap melayani setiap keluhan anda di dalam pembangunan inprastruktur
+							Selamat datang di dalam platform tukangin penyedia jasa pertukangan berbasis web, siap melayani setiap keluhan anda di dalam pembangunan inprastruktur
 						</p>
 						<a href="<?= base_url('tukangin/services') ?>" class="btn-get-started">Get Started</a>
 					</div>
@@ -52,10 +52,9 @@
 	<section id="constructions" class="constructions section">
 		<!-- Section Title -->
 		<div class="container section-title" data-aos="fade-up">
-			<h2>Constructions</h2>
+			<h2>Tukangin</h2>
 			<p>
-				Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-				consectetur velit
+				Tentukan Jasa sesuai dengan kebutuhan Anda.
 			</p>
 		</div>
 		<!-- End Section Title -->
@@ -72,12 +71,9 @@
 							</div>
 							<div class="col-xl-7 d-flex align-items-center">
 								<div class="card-body">
-									<h4 class="card-title">Eligendi omnis sunt veritatis.</h4>
+									<h4 class="card-title">Solusi Tepat untuk Pertukangan dan Desain Rumah Anda.</h4>
 									<p>
-										Fuga in dolorum et iste et culpa. Commodi possimus nesciunt
-										modi voluptatem placeat deleniti adipisci. Cum delectus
-										doloribus non veritatis. Officia temporibus illo magnam.
-										Dolor eos et.
+										Kami menyediakan layanan pertukangan dan desain rumah yang profesional. Mulai dari perbaikan kecil hingga renovasi besar, tim kami siap membantu menciptakan hunian yang nyaman dan estetik. Dengan pendekatan yang teliti, kami pastikan hasil terbaik untuk setiap proyek Anda.
 									</p>
 								</div>
 							</div>
@@ -96,12 +92,9 @@
 							</div>
 							<div class="col-xl-7 d-flex align-items-center">
 								<div class="card-body">
-									<h4 class="card-title">Possimus ut sed velit assumenda</h4>
+									<h4 class="card-title">Profesional dan Terpercaya</h4>
 									<p>
-										Sunt deserunt maiores voluptatem autem est rerum perferendis
-										rerum blanditiis. Est laboriosam qui iste numquam laboriosam
-										voluptatem architecto. Est laudantium sunt at quas aut hic.
-										Eum dignissimos.
+										Dengan tenaga ahli yang berpengalaman, kami menyediakan layanan pertukangan yang cepat, aman, dan terpercaya. Jangan ragu untuk mengandalkan kami dalam berbagai kebutuhan konstruksi dan perbaikan. Kami hadir untuk membantu menciptakan bangunan yang kuat dan tahan lama..
 									</p>
 								</div>
 							</div>
@@ -440,7 +433,8 @@
 
 					<?php foreach ($test as $ts) : ?>
 						<div class="swiper-slide">
-							<div class="testimonial-wrap">
+
+							<div class=" testimonial-wrap">
 								<div class="testimonial-item">
 									<img src="<?= base_url('assets/img/testimonials/') . $ts['img'] ?>" class="testimonial-img" alt="" />
 									<h3><?= $ts['name_user'] ?></h3>

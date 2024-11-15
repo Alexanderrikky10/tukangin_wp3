@@ -11,7 +11,7 @@ class Model_transaksi extends CI_Model
         parent::__construct();
     }
 
-    # code...
+
     public function kodeOtomatis($table, $key)
     {
         $this->db->select('right(' . $key . ', 3) as kode', false);
@@ -25,8 +25,14 @@ class Model_transaksi extends CI_Model
             $kode = 1;
         }
 
-        $kodeMax = str_pad($kode, 3, "0", STR_PAD_LEFT);
-        $kodeJadi = date('dmY') . $kodeMax;
+        $kodeMax = str_pad(
+            $kode,
+            3,
+            "0",
+            STR_PAD_LEFT
+        );
+        // Mengubah format menjadi HHMMSS + kode
+        $kodeJadi = date('His') . $kodeMax;
 
         return $kodeJadi;
     }
@@ -53,6 +59,30 @@ class Model_transaksi extends CI_Model
     public function hapuspembayaran($where = null)
     {
         $this->db->delete('metode_bayar', $where);
+    }
+    public function TambahMetode($data = null)
+    {
+        $this->db->insert('metode_bayar', $data);
+    }
+
+    public function cetakTransaksi()
+    {
+
+        $this->db->select('transaksi_selesai.*, metode_bayar.m_bayar');
+        $this->db->from('transaksi_selesai');
+        $this->db->join('metode_bayar', 'transaksi_selesai.metode_bayar = metode_bayar.id', 'left');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function get_transaksi_by_TransaksiSelesai($jasa)
+    {
+        $this->db->select('transaksi_selesai.*,  metode_bayar.m_bayar');
+        $this->db->from('transaksi_selesai');
+        $this->db->join('metode_bayar', 'transaksi_selesai.metode_bayar = metode_bayar.id',  'left');
+        $this->db->where('nama_jasa', $jasa);
+        $query = $this->db->get();
+        return $query->result_array();
     }
 }
 

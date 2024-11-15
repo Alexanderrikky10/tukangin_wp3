@@ -6,11 +6,8 @@ class Tukangin extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Model_users');
-        $this->load->model('Model_services');
-        $this->load->model('Model_project');
-        $this->load->model('Model_test');
-        $this->load->model('Model_transaksi');
+        is_logged_in();
+        is_user();
     }
 
     public function index()
@@ -67,7 +64,7 @@ class Tukangin extends CI_Controller
             'min_length' => 'Alamat terlalu pendek'
         ]);
 
-        $this->form_validation->set_rules('nomor', 'Nomor', 'required|min_length[12]', [
+        $this->form_validation->set_rules('nomor', 'Nomor', 'required|min_length[8]', [
             'required' => 'Nomor harus diisi',
             'min_length' => 'nomor terlalu pendek'
         ]);
@@ -104,8 +101,7 @@ class Tukangin extends CI_Controller
                 'alamat' => $this->input->post('alamat'),
                 'nomor' => $this->input->post('nomor'),
                 'image' => $gambar,
-                'tgl' => date('Y-m-d H:m:s')
-
+                'tgl' => time()
             ];
             $this->Model_users->simpanTransaksi($data);
             $this->session->set_flashdata('message', '<div class="alert alert-success alert-message" role="alert">Jasa yang Anda pesan sedang di proses</div>');
@@ -146,9 +142,19 @@ class Tukangin extends CI_Controller
 
         $email_user = $data['user']['email'];
         $data['transaksi'] = $this->Model_users->transaksiById($email_user);
+        $data['transaksiSelesai'] = $this->Model_users->transaksiselesai($email_user);
+
         $this->load->view('template/v-header', $data);
         $this->load->view('template/v-profile', $data);
         $this->load->view('template/v-footer');
+    }
+
+    public function changeProfile()
+    {
+        $data['title'] = 'Profile';
+        $data['user'] = $this->Model_users->cekData(['email' => $this->session->userdata('email')])->row_array();
+
+        $this->form_validation->set_rules('field', 'label', 'rules');
     }
 
     public function changepassword()
@@ -189,4 +195,6 @@ class Tukangin extends CI_Controller
             }
         }
     }
+
+    public function tambahTest() {}
 }

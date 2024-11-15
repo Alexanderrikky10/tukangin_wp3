@@ -1,9 +1,4 @@
-<!-- Begin Page Content -->
-
-<div class="container-fluid">
-
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"> Tukangin |<?= $title; ?></h1>
+<main id="main" class="main">
 
     <div class="row">
         <div class="col-lg-6">
@@ -11,7 +6,10 @@
 
             <?= $this->session->flashdata('message'); ?>
 
-            <a href="" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahMetodbayarModal">Tambah menu baru</a>
+            <a class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#tambahMetodeBayarModel">
+                Metode Bayar Baru
+            </a>
+
 
 
             <table class="table table-hover">
@@ -19,6 +17,7 @@
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">metode</th>
+                        <th scope="col">Rekening</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -28,12 +27,41 @@
                         <tr>
                             <th scope="row"><?= $i; ?></th>
                             <td><?= $m['m_bayar']; ?></td>
+                            <td><?= $m['rekening']; ?></td>
                             <td>
-                                <a href="<?= base_url('admin/editPembayaran/') . $m['id']; ?>" class="badge badge-success">edit</a>
-                                <a href="<?= base_url('admin/hapuspembayaran/') . $m['id'] ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $title . ' ' . $m['m_bayar']; ?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i> hapus</a>
+                                <a data-bs-toggle="modal" data-bs-target="#editMetodeModal<?= $m['id'] ?>" class="btn btn-outline-info">edit</a>
+                                <a href="<?= base_url('admin/hapuspembayaran/') . $m['id'] ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $title . ' ' . $m['m_bayar']; ?> ?');" class="btn btn-outline-danger"><i class="fas fa-trash"></i> hapus</a>
                             </td>
                         </tr>
                         <?php $i++ ?>
+
+                        <!-- edit Metode Bayar  -->
+
+                        <div class="modal fade" id="editMetodeModal<?= $m['id'] ?>" tabindex="-1" aria-labelledby="editMetodeModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="editMetodeModalLabel">Edit Metode Bayar</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form action="<?= base_url('admin/editMetode'); ?>" method="post" enctype="multipart/form-data">
+                                        <div class="modal-body">
+                                            <input type="hidden" name="id" id="id" value="<?= $m['id'] ?>">
+                                            <div class="form-group pt-3">
+                                                <input type="text" class="form-control" id="m_bayar" name="m_bayar" placeholder="Nama metode baru" value="<?= $m['m_bayar'] ?>">
+                                            </div>
+                                            <div class="form-group pt-3">
+                                                <input type="text" class="form-control" id="rekening" name="rekening" placeholder="Rekening baru" value="<?= $m['rekening'] ?>">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     <?php endforeach ?>
                 </tbody>
             </table>
@@ -42,27 +70,26 @@
 
 
 
-</div>
-<!-- /.container-fluid -->
 
-</div>
-<!-- End of Main Content -->
+</main>
 
 
-<!-- Modal -->
-<div class="modal fade" id="tambahMetodbayarModal" tabindex="-1" role="dialog" aria-labelledby="tambahMetodbayarModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+
+<!-- Modal tambah bayar  -->
+<div class="modal fade" id="tambahMetodeBayarModel" tabindex="-1" aria-labelledby="tambahMetodeBayarModelLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="tambahMetodbayarModalLabel">Tambah menu</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h1 class="modal-title fs-5" id="tambahMetodeBayarModelLabel">Tambah Metode Bayar</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('tukangin/metodebayar'); ?>" method="post">
+            <form action="<?= base_url('admin/metodebayar'); ?>" method="post">
                 <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="m_bayar" name="m_bayar" placeholder="metode bayar">
+                    <div class="form-group pt-3">
+                        <input type="text" class="form-control" id="m_bayar" name="m_bayar" placeholder="Nama metode baru">
+                    </div>
+                    <div class="form-group pt-3">
+                        <input type="text" class="form-control" id="rekening" name="rekening" placeholder="Rekening baru">
                     </div>
                 </div>
                 <div class="modal-footer">

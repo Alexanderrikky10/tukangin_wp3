@@ -10,7 +10,9 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="<?= base_url('assets/') ?>admin/img/favicon.png" rel="icon">
+    <!-- <link href="<?= base_url('assets/') ?>admin/img/favicon.png" rel="icon"> -->
+    <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?= base_url('assets/') ?>img/logo-1.png" rel="icon">
     <link href="<?= base_url('assets/') ?>admin/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -45,8 +47,8 @@
 
         <div class="d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
-                <img src="<?= base_url('assets/') ?>admin/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
+                <img src="<?= base_url('assets/') ?>img/logo-1.png" alt="">
+                <span class="d-none d-lg-block"> Tukangin</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
