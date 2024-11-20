@@ -4,10 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Auth extends CI_Controller
 {
 
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    // }
 
     public function index()
     {
@@ -120,7 +116,7 @@ class Auth extends CI_Controller
             'message',
             '<div class="alert alert-success alert-message" role="alert">You have been logged out! </div>'
         );
-        redirect('auth');
+        redirect('tukangin/home');
     }
 }
 /* End of file: Auth.php */

@@ -63,6 +63,27 @@ class Model_users extends CI_Model
         $query = $this->db->get(); // Menjalankan query
         return $query->result_array();
     }
+
+    public function updateProfile($email, $data)
+    {
+        $this->db->where('email', $email);
+        return $this->db->update('user', $data);
+    }
+
+    public function updateData($data, $where)
+    {
+        $this->db->update('user', $data, $where);
+    }
+
+    public function getJabatan()
+    {
+        return $this->db->get('jabatan')->result_array();
+    }
+
+    public function getBintang()
+    {
+        return $this->db->get('bintang')->result_array();
+    }
 }
 
 /* End of file: Model_users.php */

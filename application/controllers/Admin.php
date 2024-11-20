@@ -142,7 +142,7 @@ class Admin extends CI_Controller
             'nomor' => $this->input->post('nomor'),
             'img' => $this->input->post('image'),
             'tgl_transaksi' => $this->input->post('tgl'),
-            'status' => 'dalam proses'
+            'status' => 'selesai'
         ];
 
         // Simpan data transaksi ke tabel transaksi_selesai

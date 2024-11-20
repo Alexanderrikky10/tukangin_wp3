@@ -84,6 +84,15 @@ class Model_transaksi extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+    public function cekTransaksiBelumDipindah($email)
+    {
+        // Cek apakah ada data transaksi berdasarkan email pengguna
+        $this->db->where('email', $email);
+        $query = $this->db->get('transaksi'); // Tabel transaksi utama
+
+        // Jika ada data, berarti masih ada pesanan yang belum dikonfirmasi
+        return $query->row_array();
+    }
 }
 
 /* End of file: Model_transaksi.php */

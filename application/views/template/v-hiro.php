@@ -1,15 +1,18 @@
 <main class="main">
+	<!-- Menampilkan Flashdata jika ada -->
 	<!-- Hero Section -->
 	<section id="hero" class="hero section dark-background">
 		<div class="info d-flex align-items-center">
 			<div class="container">
+				<div class="text-center"><?= $this->session->flashdata('message'); ?></div>
 				<div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
 					<div class="col-lg-6 text-center">
 						<h2>Welcome to Tukangin</h2>
 						<p>
 							Selamat datang di dalam platform tukangin penyedia jasa pertukangan berbasis web, siap melayani setiap keluhan anda di dalam pembangunan inprastruktur
 						</p>
-						<a href="<?= base_url('tukangin/services') ?>" class="btn-get-started">Get Started</a>
+						<a href="<?= $this->session->userdata('email') ? base_url('tukangin/services') : base_url('auth') ?>" class="btn-get-started">Get Started</a>
+
 					</div>
 				</div>
 			</div>
@@ -46,6 +49,7 @@
 		</div>
 	</section>
 	<!-- /Hero Section -->
+
 
 
 	<!-- Constructions Section -->

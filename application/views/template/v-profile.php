@@ -22,21 +22,36 @@
         <div class="row">
 
             <div class="col-xl-4 ms-5">
-                <div class="card">
+                <div class="card shadow-sm border-0">
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+                        <!-- Profile Image -->
+                        <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>"
+                            alt="Profile"
+                            class="rounded-circle border"
+                            style="width: 150px; height: 150px; object-fit: cover;">
 
-                        <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>" alt="Profile" class="rounded-circle">
-                        <h2><?= $user['name'] ?></h2>
-                        <div class="social-links mt-2">
-                            <a href="<?= $user['x_app'] ?>" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="<?= $user['facebook'] ?>" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="<?= $user['instagram'] ?>" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="<?= $user['linkedin'] ?>" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        <!-- User Name -->
+                        <h2 class="mt-3 mb-1"><?= $user['name'] ?></h2>
+
+                        <!-- Social Links -->
+                        <div class="social-links mt-2 d-flex justify-content-center">
+                            <a href="<?= $user['x_app'] ?>" class="twitter text-warning mx-2" target="_blank">
+                                <i class="bi bi-twitter fs-4"></i>
+                            </a>
+                            <a href="<?= $user['facebook'] ?>" class="facebook text-warning mx-2" target="_blank">
+                                <i class="bi bi-facebook fs-4"></i>
+                            </a>
+                            <a href="<?= $user['instagram'] ?>" class="instagram text-warning mx-2" target="_blank">
+                                <i class="bi bi-instagram fs-4"></i>
+                            </a>
+                            <a href="<?= $user['linkedin'] ?>" class="linkedin text-warning mx-2" target="_blank">
+                                <i class="bi bi-linkedin fs-4"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-
             </div>
+
 
             <div class="col-xl-7">
 
@@ -67,113 +82,133 @@
                         <div class="tab-content pt-2">
 
                             <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                <h5 class="card-title">Profile Details</h5>
-
-                                <!-- Profile Details Rows -->
-                                <div class="row mb-3">
-                                    <div class="col-lg-3 col-md-4 label">Full Name</div>
-                                    <div class="col-lg-9 col-md-8"><?= $user['name'] ?></div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-lg-3 col-md-4 label">Address</div>
-                                    <div class="col-lg-9 col-md-8"><?= $user['alamat'] ?></div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-lg-3 col-md-4 label">Phone</div>
-                                    <div class="col-lg-9 col-md-8"><?= $user['tlp'] ?></div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-lg-3 col-md-4 label">Email</div>
-                                    <div class="col-lg-9 col-md-8"><?= $user['email'] ?></div>
-                                </div>
+                                <!-- Profile Overview Card -->
+                                <div class="card shadow-sm">
+                                    <div class="card-body">
+                                        <!-- Profile Details Rows -->
+                                        <div class="row mb-3">
+                                            <div class="col-lg-3 col-md-4 label fw-bold">Full Name</div>
+                                            <div class="col-lg-9 col-md-8"><?= $user['name'] ?></div>
+                                        </div>
+                                        <hr>
+                                        <div class="row mb-3">
+                                            <div class="col-lg-3 col-md-4 label fw-bold">Address</div>
+                                            <div class="col-lg-9 col-md-8"><?= $user['alamat'] ?></div>
+                                        </div>
+                                        <hr>
+                                        <div class="row mb-3">
+                                            <div class="col-lg-3 col-md-4 label fw-bold">Phone</div>
+                                            <div class="col-lg-9 col-md-8"><?= $user['tlp'] ?></div>
+                                        </div>
+                                        <hr>
+                                        <div class="row mb-3">
+                                            <div class="col-lg-3 col-md-4 label fw-bold">Email</div>
+                                            <div class="col-lg-9 col-md-8"><?= $user['email'] ?></div>
+                                        </div>
+                                    </div>
+                                </div><!-- End Profile Overview Card -->
                             </div>
 
 
                             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                                <!-- Profile Edit Form -->
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>" alt="Profile">
-                                            <div class="pt-2">
-                                                <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                                <!-- Profile Edit Card -->
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- Profile Edit Form -->
+                                        <form action="<?= base_url('user/changeProfile') ?>" method="post" enctype="multipart/form-data">
+                                            <!-- Profile Image -->
+                                            <div class="row mb-4">
+                                                <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                                                <div class="col-md-8 col-lg-9 text-center">
+                                                    <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>"
+                                                        alt="Profile"
+                                                        class="rounded-circle mb-3"
+                                                        style="width: 150px; height: 150px; object-fit: cover;">
+
+                                                    <div class="pt-2">
+                                                        <!-- Input File -->
+                                                        <input type="file" id="uploadImage" name="profileImage" class="form-control d-none" accept="image/*">
+                                                        <!-- Tombol untuk membuka file explorer -->
+                                                        <label for="uploadImage" class="btn btn-sm btn-primary" title="Upload new profile image">
+                                                            <i class="bi bi-upload"></i> Upload
+                                                        </label>
+                                                        <a href="<?= base_url('tukangin/removeImage') ?>" class="btn btn-sm btn-danger" title="Remove my profile image">
+                                                            <i class="bi bi-trash"></i> Remove
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+
+                                            <!-- Full Name -->
+                                            <div class="row mb-3">
+                                                <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <input name="fullName" type="text" class="form-control" id="fullName" value="<?= $user['name'] ?>">
+                                                </div>
+                                            </div>
+
+                                            <!-- Email -->
+                                            <div class="row mb-3">
+                                                <label for="email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <input name="email" type="email" class="form-control" id="email" value="<?= $user['email'] ?>" readonly>
+                                                </div>
+                                            </div>
+
+                                            <!-- Phone -->
+                                            <div class="row mb-3">
+                                                <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <input name="phone" type="text" class="form-control" id="Phone" value="<?= $user['tlp'] ?>">
+                                                </div>
+                                            </div>
+
+                                            <!-- Social Profiles -->
+                                            <div class="row mb-3">
+                                                <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <input name="twitter" type="text" class="form-control" id="Twitter" value="<?= $user['x_app'] ?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook Profile</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <input name="facebook" type="text" class="form-control" id="Facebook" value="<?= $user['facebook'] ?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram Profile</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <input name="instagram" type="text" class="form-control" id="Instagram" value="<?= $user['instagram'] ?>">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin Profile</label>
+                                                <div class="col-md-8 col-lg-9">
+                                                    <input name="linkedin" type="text" class="form-control" id="Linkedin" value="<?= $user['linkedin'] ?>">
+                                                </div>
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
                                     </div>
-
-                                    <div class="row mb-3">
-                                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label"><?= $user['name'] ?></label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="fullName" type="text" class="form-control" id="fullName" value="<?= $user['name'] ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="email" type="email" class="form-control" id="Email" value="<?= $user['email'] ?>" readonly>
-                                        </div>
-                                    </div>
-
-
-
-
-
-                                    <div class="row mb-3">
-                                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="phone" type="text" class="form-control" id="Phone" value="<?= $user['tlp'] ?>">
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="row mb-3">
-                                        <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="twitter" type="text" class="form-control" id="Twitter" value="<?= $user['x_app'] ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="facebook" type="text" class="form-control" id="Facebook" value="<?= $user['facebook'] ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="instagram" type="text" class="form-control" id="Instagram" value="<?= $user['instagram'] ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="linkedin" type="text" class="form-control" id="Linkedin" value="<?= $user['linkedin'] ?>">
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Save Changes</button>
-                                    </div>
-                                </form><!-- End Profile Edit Form -->
+                                </div><!-- End Profile Edit Card -->
 
                             </div>
+
 
 
                             <div class="tab-pane fade pt-3" id="profile-change-password">
 
 
-                                <form action="<?= base_url('tukangin/changepassword'); ?>" method="post">
+                                <form action="<?= base_url('user/changepassword'); ?>" method="post">
                                     <div class="form-group mb-3">
                                         <label for="current_password">Password saat ini</label>
                                         <input type="password" class="form-control" id="current_password" name="current_password">
@@ -343,45 +378,88 @@
                                                             <div class="modal fade" id="testimonimodal<?= $ts['no_transaksi'] ?>" tabindex="-1">
                                                                 <div class="modal-dialog modal-xl">
                                                                     <div class="modal-content">
+                                                                        <!-- Modal Header -->
                                                                         <div class="modal-header">
-                                                                            <h5 class="modal-title">Extra Large Modal</h5>
+                                                                            <h5 class="modal-title">Testimoni</h5>
                                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                         </div>
 
-                                                                        <div class="modal-body">
-                                                                            <div class="row align-items-center">
-                                                                                <!-- Card Profile Image -->
-                                                                                <div class="col-xl-4 p-3">
-                                                                                    <div class="card" style="width: 100%;">
-                                                                                        <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>" alt="User Image" class="card-img-top">
-                                                                                    </div>
-                                                                                </div>
-
-                                                                                <!-- Form Information -->
-                                                                                <div class="col-xl-8 p-3">
-                                                                                    <h5 class="ms-3">Testimoni</h5>
-                                                                                    <div class="card p-3" x-data="{ count: 1, bintang: 1, get TotalBintang() { return this.count*this.bintang } }">
-                                                                                        <h4></h4>
-                                                                                        <div class="mb-3">
-                                                                                            <label for="email" class="form-label">Email address</label>
-                                                                                            <input type="email" class="form-control" name="email" id="email" value="<?= $user['email'] ?>" readonly>
+                                                                        <!-- Modal Body -->
+                                                                        <form action="<?= base_url('user/tambahTest') ?>" method="post">
+                                                                            <div class="modal-body">
+                                                                                <div class="row align-items-center">
+                                                                                    <!-- Profile Image Section -->
+                                                                                    <div class="col-xl-4 p-3">
+                                                                                        <div class="card" style="width: 100%;">
+                                                                                            <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>"
+                                                                                                alt="User Image" class="card-img-top">
                                                                                         </div>
-                                                                                        <div class="mb-3">
-                                                                                            <label for="name" class="form-label">Full Name</label>
-                                                                                            <input type="text" class="form-control" name="name" id="name" value="<?= $user['name'] ?>" readonly>
+                                                                                    </div>
+
+                                                                                    <!-- Form Information Section -->
+
+                                                                                    <div class="col-xl-8 p-3">
+                                                                                        <h5 class="ms-3">Testimoni</h5>
+                                                                                        <div class="card p-3">
+                                                                                            <!-- Email -->
+                                                                                            <div class="mb-3">
+                                                                                                <label for="email" class="form-label">Email address</label>
+                                                                                                <input type="email" class="form-control" name="email" id="email"
+                                                                                                    value="<?= $user['email'] ?>" readonly>
+                                                                                            </div>
+                                                                                            <!-- Full Name -->
+                                                                                            <div class="mb-3">
+                                                                                                <label for="name" class="form-label">Full Name</label>
+                                                                                                <input type="text" class="form-control" name="name" id="name"
+                                                                                                    value="<?= $user['name'] ?>" readonly>
+                                                                                            </div>
+                                                                                            <!-- Jabatan dan bintang -->
+                                                                                            <div class="form-group row g-2">
+                                                                                                <div class="col-sm-6">
+                                                                                                    <label for="metode" class="form-label ms-2">jabatan</label>
+                                                                                                    <select name="jabatan" id="jabatan" class="jabatan form-select" aria-label="Pilih sesuai jabatan anda">
+                                                                                                        <option selected>Pilih Jabatan</option>
+                                                                                                        <?php foreach ($jabatan as $j) : ?>
+                                                                                                            <option value="<?= $j['id_jabatan']; ?>">
+                                                                                                                <?= $j['jabatan']; ?>
+                                                                                                            </option>
+                                                                                                        <?php endforeach; ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                                <div class="col-sm-6">
+                                                                                                    <label for="metode" class="form-label ms-2">Bintang</label>
+                                                                                                    <select name="bintang" id="bintang" class="bintang form-select" aria-label="Pilih jumlah bintang">
+                                                                                                        <option selected>Pilih jumlah bintang</option>
+                                                                                                        <?php foreach ($bintang as $b) : ?>
+                                                                                                            <option value="<?= $b['id_bintang']; ?>">
+                                                                                                                <?= $b['bintang']; ?>
+                                                                                                            </option>
+                                                                                                        <?php endforeach; ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- Testimoni -->
+                                                                                            <div class="mb-3">
+                                                                                                <label for="deskripsi" class="form-label">Testimoni</label>
+                                                                                                <textarea class="form-control" name="deskripsi" id="deskripsi" rows="4"
+                                                                                                    placeholder="Tuliskan testimoni Anda di sini..."></textarea>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
+                                                                            <!-- Modal Footer -->
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </form>
 
-                                                                        <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                                                        </div>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
+
 
 
                                                         </div>
