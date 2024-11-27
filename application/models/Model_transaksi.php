@@ -93,6 +93,30 @@ class Model_transaksi extends CI_Model
         // Jika ada data, berarti masih ada pesanan yang belum dikonfirmasi
         return $query->row_array();
     }
+    public function hapusTransaksi($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->delete('transaksi'); // Ganti 'transaksi' dengan nama tabel Anda
+    }
+
+    public function getTransaksiById($id)
+    {
+        $this->db->select('transaksi.*, metode_bayar.m_bayar');
+        $this->db->from('transaksi');
+        $this->db->join('metode_bayar', 'transaksi.metode = metode_bayar.id', 'left'); // 'left' memastikan hasil tetap ada meskipun metode tidak cocok
+        $this->db->where('transaksi.id', $id);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+    public function getTransaksiselesaiId($no_transaksi)
+    {
+        $this->db->select('transaksi_selesai.*, metode_bayar.m_bayar');
+        $this->db->from('transaksi_selesai');
+        $this->db->join('metode_bayar', 'transaksi_selesai.metode_bayar = metode_bayar.id', 'left'); // 'left' memastikan hasil tetap ada meskipun metode tidak cocok
+        $this->db->where('transaksi_selesai.no_transaksi', $no_transaksi);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
 }
 
 /* End of file: Model_transaksi.php */

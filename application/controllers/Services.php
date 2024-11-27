@@ -89,6 +89,28 @@ class Services extends CI_Controller
             }
         }
     }
+
+
+    public function hapusPesanan($id)
+    {
+
+        $result = $this->Model_transaksi->hapusTransaksi($id);
+
+        if ($result) {
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-success alert-message" role="alert">Transaksi berhasil dihapus</div>'
+            );
+        } else {
+            $this->session->set_flashdata(
+                'message',
+                '<div class="alert alert-danger alert-message" role="alert">Transaksi gagal dihapus</div>'
+            );
+        }
+
+        // Redirect kembali ke halaman pesanan user
+        redirect('user/Profile');
+    }
 }
 
 /* End of file: Services.php */

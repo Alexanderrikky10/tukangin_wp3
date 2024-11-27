@@ -259,11 +259,11 @@
                             <div class="swiper-slide">
                                 <div class="testimonial-wrap">
                                     <div class="testimonial-item">
-                                        <img src="<?= base_url('assets/img/testimonials/') . $ts['img'] ?>" class="testimonial-img" alt="" />
+                                        <img src="<?= base_url('assets/img/profile/') . $ts['img'] ?>" class="testimonial-img" alt="" />
                                         <h3><?= $ts['name_user'] ?></h3>
-                                        <h4><?= $ts['jabatan'] ?></h4>
+                                        <h4><?= $ts['jabatan_user'] ?></h4>
                                         <div class="stars">
-                                            <?= $ts['bintang'] ?>
+                                            <?= $ts['jumlah_bintang'] ?>
                                         </div>
                                         <p>
                                             <i class="bi bi-quote quote-icon-left"></i>
@@ -273,7 +273,7 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach ?>
+                        <?php endforeach; ?>
                         <!-- End testimonial item -->
                     </div>
                     <div class="swiper-pagination"></div>

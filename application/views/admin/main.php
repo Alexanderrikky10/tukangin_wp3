@@ -1,5 +1,17 @@
     <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1 class="text-primary fw-bold"><?= $title; ?></h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
+                    <li class="breadcrumb-item active"><?= $title; ?></li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
         <div class="container">
+            <div class="text-center"><?= $this->session->flashdata('message'); ?></div>
             <center>
                 <table>
                     <tr>
@@ -35,7 +47,7 @@
                                                 <input type="hidden" name="pekerja" id="pekerja" value="<?= $t->pekerja ?>">
                                                 <input type="hidden" name="total_bayar" id="total_bayar" value="<?= $t->total_bayar ?>">
                                                 <input type="hidden" name="email" id="email" value="<?= $t->email ?>">
-                                                <input type="hidden" name="alamat" id="alamat" <?= $t->alamat ?>>
+                                                <input type="hidden" name="alamat" id="alamat" value="<?= $t->alamat ?>">
                                                 <input type="hidden" name="m_bayar" id="m_bayar" value="<?= $t->metode ?>">
                                                 <input type="hidden" name="nomor" id="nomor" value="<?= $t->nomor ?>">
                                                 <input type="hidden" name="image" id="image" value="<?= $t->image ?>">
@@ -45,11 +57,11 @@
                                                     <button type="submit" class="btn btn-sm btn-outline-info"><i class="bi bi-check-circle-fill"></i> </i>Konfimasi</button>
                                                 </td>
                                                 <td>
-                                                    <input class="form-control rounded-sm" type="text" name="denda" id="denda" value="Rp.<?= number_format($t->total_bayar); ?>">
+                                                    <input class="form-control rounded-sm" type="text" name="denda" id="denda" readonly value="Rp.<?= number_format($t->total_bayar); ?>">
                                                     <?= form_error(); ?>
                                                 </td>
                                                 <td>
-                                                    <input class="form-control rounded-sm" style="width:100px" type="text" name="lama" id="lama" value="<?= $t->jam; ?>">
+                                                    <input class="form-control rounded-sm" style="width:100px" type="text" readonly name="lama" id="lama" value="<?= $t->jam; ?>">
                                                     <?= form_error(); ?>
                                                 </td>
                                             </form>

@@ -26,6 +26,9 @@
                         <li data-filter=".filter-construction">Construction</li>
                         <li data-filter=".filter-repairs">Repairs</li>
                         <li data-filter=".filter-design">Design</li>
+                        <li data-filter=".filter-Decluttering">Decluttering</li>
+                        <li data-filter=".filter-Painting">Painting & Finishing</li>
+
                     </ul><!-- End Portfolio Filters -->
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">

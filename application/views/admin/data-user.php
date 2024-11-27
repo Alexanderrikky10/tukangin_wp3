@@ -9,49 +9,50 @@
         </nav>
     </div><!-- End Page Title -->
     <div class="container">
-        <div class="text-end mb-3">
-            <a href="<?= base_url('laporan/cetakTestimoni'); ?>" class="btn btn-warning">
-                <i class="fas fa-file-pdf"></i> Cetak PDF
+        <div class="d-flex justify-content-end mb-3">
+            <a href="<?= base_url('laporan/cetakUser') ?>" class="btn btn-success">
+                <i class="fas fa-file-pdf"></i> Cetak Data
             </a>
         </div>
         <div class="card mb-4 shadow">
-
             <div class="card-header bg-primary text-white">
-                <i class="fas fa-comments"></i> Data Testimoni
+                <i class="fas fa-users"></i> Daftar Pengguna
             </div>
-
-
             <div class="card-body">
+
                 <div class="table-responsive">
                     <table class="table table-hover table-striped align-middle" id="dataTable" width="100%" cellspacing="0">
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>
-                                <th>Nama User</th>
-                                <th>Jabatan</th>
+                                <th>Nama</th>
+                                <th>Email</th>
                                 <th>Gambar</th>
-                                <th>Bintang</th>
-                                <th>Komentar</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Alamat</th>
+                                <th>Telepon</th>
+                                <th>Tanggal Dibuat</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($testimoni as $t): ?>
+                            <?php foreach ($user_list as $user): ?>
                                 <tr>
-                                    <td class="text-center"><?= $t['id_testimoni']; ?></td>
-                                    <td><?= $t['name_user']; ?></td>
-                                    <td>
-                                        <span class="badge bg-success"><?= $t['jabatan']; ?></span>
-                                        <!--  -->
-                                    </td>
+                                    <td class="text-center"><?= $user['id']; ?></td>
+                                    <td><?= $user['name']; ?></td>
+                                    <td><?= $user['email']; ?></td>
                                     <td class="text-center">
-                                        <img src="<?= base_url('assets/img/profile/') . $t['img']; ?>" alt="Gambar Testimoni" class="rounded-circle" width="50">
+                                        <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" alt="Gambar User" class="rounded-circle" width="50">
                                     </td>
-                                    <td class="text-center text-warning">
-                                        <?php for ($i = 0; $i < $t['bintang']; $i++): ?>
-                                            <i class="fas fa-star"></i>
-                                        <?php endfor; ?>
+                                    <td>
+                                        <?= $user['role_id'] == 1 ? '<span class="badge bg-success">Admin</span>' : '<span class="badge bg-info">User</span>'; ?>
                                     </td>
-                                    <td><?= $t['komentar']; ?></td>
+                                    <td>
+                                        <?= $user['is_active'] ? '<span class="badge bg-success">Aktif</span>' : '<span class="badge bg-danger">Nonaktif</span>'; ?>
+                                    </td>
+                                    <td><?= $user['alamat']; ?></td>
+                                    <td><?= $user['tlp']; ?></td>
+                                    <td><?= date('d M Y', $user['date_created']); ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -63,10 +64,6 @@
 </main>
 
 <style>
-    .table-hover tbody tr:hover {
-        background-color: #f0f8ff;
-    }
-
     .card {
         border-radius: 15px;
         overflow: hidden;

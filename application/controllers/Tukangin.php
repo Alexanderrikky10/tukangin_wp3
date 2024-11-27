@@ -35,13 +35,14 @@ class Tukangin extends CI_Controller
         $data['title'] = 'Home';
         $data['services'] = $this->Model_services->getServices()->result_array();
         $data['project'] = $this->Model_project->getProject()->result_array();
-        $data['test'] = $this->Model_test->getTest()->result_array();
+        $data['test'] = $this->Model_test->getTestimoni();
         $this->load_template('template/v-hiro', $data);
     }
 
     public function about()
     {
         $data['title'] = 'About';
+        $data['test'] = $this->Model_test->getTestimoni();
         $this->load_template('template/v-about', $data);
     }
 
@@ -50,7 +51,7 @@ class Tukangin extends CI_Controller
         $data['title'] = 'Services';
         $data['metode'] = $this->Model_services->metodeBayar()->result_array();
         $data['services'] = $this->Model_services->getServices()->result_array();
-        $data['test'] = $this->Model_test->getTest()->result_array();
+        $data['test'] = $this->Model_test->getTestimoni();
         $data['user'] = $this->Model_users->cekData(['email' => $this->session->userdata('email')])->row_array();
         $this->load_template('template/v-services', $data);
     }

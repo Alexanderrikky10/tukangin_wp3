@@ -24,6 +24,7 @@ class User extends CI_Controller
 
         $this->load->view('template/v-header', $data);
         $this->load->view('template/v-profile', $data);
+        // $this->load->view('template/test', $data);
         $this->load->view('template/v-footer');
     }
 
@@ -179,6 +180,76 @@ class User extends CI_Controller
                 redirect('user/profile');
             }
         }
+    }
+
+    public function validate_select($value)
+    {
+        if ($value == 'Pilih Jabatan' || $value == 'Pilih jumlah bintang') {
+            $this->form_validation->set_message('validate_select', '{field} harus dipilih.');
+            return false;
+        }
+        return true;
+    }
+
+
+    public function tambahTestimoni()
+    {
+        $this->form_validation->set_rules('jabatan', 'Jabatan', 'callback_validate_select');
+        $this->form_validation->set_rules('bintang', 'Bintang', 'callback_validate_select');
+
+        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-message" role="alert">Gagal Menambahkan testimoni</div>');
+            redirect('user/profile'); // Redirect jika validasi gagal
+        } else {
+            // Data yang akan dimasukkan ke database
+            $data = [
+                'name_user' => $this->input->post('name'),
+                'jabatan' => $this->input->post('jabatan'),
+                'bintang' => $this->input->post('bintang'),
+                'komentar' => $this->input->post('deskripsi'),
+                'img' => $this->input->post('img') // Pastikan ID transaksi dikirim dari form
+            ];
+
+            // Simpan data menggunakan model
+            if ($this->Model_test->insertTestimoni($data)) {
+                $this->session->set_flashdata('message', '<div class="alert alert-success alert-message" role="alert">Testimoni berhasil ditambahkan.</div>');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger alert-message" role="alert">Testimoni gagal di tambahkan.</div>');
+            }
+            redirect('user/profile'); // Redirect ke halaman awal
+        }
+    }
+
+
+    public function cetakPdf($id)
+    {
+        // Load library dan model
+        $this->load->library('dompdf_gen');
+        // Ambil data transaksi berdasarkan ID
+        $data['transaksi'] = $this->Model_transaksi->getTransaksiById($id);
+
+        // Jika transaksi tidak ditemukan
+        if (!$data['transaksi']) {
+            show_404();
+        }
+
+        // Load view untuk PDF
+        $this->load->view('laporan/bukti_pembayaran', $data);
+
+        // Atur ukuran kertas dan orientasi
+        $paper_size = 'A4'; // ukuran kertas
+        $orientation = 'landscape'; //orientasi
+        $html = $this->output->get_output();
+
+        $this->load->library('Pdf');
+        $this->pdf->setPaper($paper_size, $orientation);
+        //Convert to PDF
+        $this->pdf->load_html($html);
+        $this->pdf->render();
+        // Output file ke browser
+        $this->pdf->stream("bukti_pembayaran_" . $id . ".pdf", array("Attachment" => 0));
     }
 }
 

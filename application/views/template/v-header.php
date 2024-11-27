@@ -79,7 +79,7 @@
                                 <?php if ($this->session->userdata('email')): ?>
                                     <?= $user['name']; ?>
                                 <?php else: ?>
-                                    Login
+                                    Join Now
                                 <?php endif; ?>
                             </span>
                             <img

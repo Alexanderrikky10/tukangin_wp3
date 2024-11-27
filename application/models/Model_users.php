@@ -84,6 +84,24 @@ class Model_users extends CI_Model
     {
         return $this->db->get('bintang')->result_array();
     }
+
+    public function getJasa()
+    {
+        return $this->db->get('jasa')->result_array();
+    }
+
+    public function getTestimoni()
+    {
+        $this->db->select('testimoni.*,jabatan.jabatan');
+        $this->db->from('testimoni');
+        $this->db->join('jabatan', 'testimoni.jabatan = jabatan.id_jabatan', 'lift');
+        $query = $query = $this->db->get('');
+        return $query->result_array();
+    }
+    public function getAllUsers()
+    {
+        return $this->db->get('user')->result_array();
+    }
 }
 
 /* End of file: Model_users.php */

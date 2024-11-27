@@ -36,7 +36,7 @@
                                     <?= $this->session->flashdata('message'); ?>
                                     <div class="input-group input-group-outline my-3">
                                         <label class="form-label">Email</label>
-                                        <input type="email" name="email" id="email" class="form-control" />
+                                        <input type="email" name="email" id="email" class="form-control" value="<?= set_value('email') ?>" />
                                     </div>
                                     <small class="text-danger pl-3"><?= form_error('email') ?></small>
                                     <div class="input-group input-group-outline mb-3">
@@ -45,7 +45,7 @@
                                     </div>
                                     <small class="text-danger pl-3"><?= form_error('password') ?></small>
                                     <div class="form-check form-switch d-flex align-items-center mb-3">
-                                        <input class="form-check-input" type="checkbox" id="rememberMe" checked />
+                                        <input class="form-check-input" type="checkbox" id="rememberMe" />
                                         <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                                     </div>
                                     <div class="text-center">

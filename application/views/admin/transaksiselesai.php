@@ -1,25 +1,34 @@
 <main id="main" class="main">
-    <div class="pagetitle">
-        <h1>Profile</h1>
-        <nav>
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
-                <li class="breadcrumb-item">Admin</li>
-                <li class="breadcrumb-item active">Jasa</li>
-            </ol>
-        </nav>
-        <a href="<?= base_url('laporan'); ?>" class="btn btn-warning mb-3">
-            <i class="far fa-file-pdf"></i> Download Pdf
+    <div class="pagetitle d-flex justify-content-between align-items-center">
+        <div>
+            <h1 class="text-primary fw-bold"><?= $title; ?></h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin') ?>">Home</a></li>
+                    <li class="breadcrumb-item active"><?= $title; ?></li>
+                </ol>
+            </nav>
+        </div>
+        <!-- Tombol Download PDF -->
+        <a href="<?= base_url('laporan'); ?>" class="btn btn-warning btn-sm shadow-sm">
+            <i class="far fa-file-pdf"></i> Download PDF
         </a>
     </div><!-- End Page Title -->
 
-    <div class="col-xl-12">
+    <div class="col-xl-12 mt-3">
         <div class="card">
             <div class="card-body pt-3">
                 <!-- Bordered Tabs -->
                 <ul class="nav nav-tabs nav-tabs-bordered">
                     <?php
-                    $categories = ['construction' => 'Construction', 'remodeling' => 'Remodeling', 'design' => 'Design', 'painting' => 'Painting', 'repairs' => 'Repairs', 'decluttering' => 'Decluttering'];
+                    $categories = [
+                        'construction' => 'Construction',
+                        'remodeling' => 'Remodeling',
+                        'design' => 'Design',
+                        'painting' => 'Painting',
+                        'repairs' => 'Repairs',
+                        'decluttering' => 'Decluttering'
+                    ];
                     foreach ($categories as $key => $value) :
                     ?>
                         <li class="nav-item">
@@ -55,9 +64,9 @@
                                             </div>
                                             <div class="card-footer bg-light">
                                                 <div class="d-flex justify-content-end">
-                                                    <button class="btn btn-danger">
+                                                    <a href="<?= base_url('laporan/cetakTransaksiById/') . $ti['no_transaksi'] ?>" class="btn btn-danger">
                                                         <i class="bi bi-filetype-pdf"></i> Cetak Transaksi
-                                                    </button>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

@@ -231,53 +231,6 @@
 
                             </div>
 
-                            <!-- pesanan user  -->
-                            <div class="tab-pane fade pt-3" id="profile-pesanan">
-                                <?php foreach ($transaksi as $ti) : ?>
-                                    <div class="container mt-4">
-                                        <!-- Card untuk item pembelian -->
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <!-- Gambar produk -->
-                                                    <div class="col-md-2">
-                                                        <img src="<?= base_url('assets/img/transaksi/') . $ti['image'] ?>" alt="Produk" class="img-fluid">
-                                                    </div>
-
-                                                    <!-- Detail produk -->
-                                                    <div class="col-md-8">
-                                                        <h6 class="card-title"><?= $ti['nama_jasa'] ?></h6>
-                                                        <p class="mb-1"><?= $ti['m_bayar'] ?></p>
-                                                        <p class="mb-1">x <?= $ti['jam'] ?> Jam</p>
-                                                        <p class="mb-1">x <?= $ti['pekerja'] ?> orang</p>
-                                                        <span class="badge bg-success">Bebas Refund</span>
-                                                    </div>
-
-                                                    <!-- Harga -->
-                                                    <div class="col-md-2 text-end">
-                                                        <h5 class="text-danger">Rp. <?= number_format($ti['total_bayar']) ?></h5>
-                                                        <p class="text-muted text-decoration-line-through">Rp135.000</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="card-footer bg-white border-0">
-                                                <div class="d-flex justify-content-between">
-                                                    <!-- Status pesanan -->
-                                                    <p class="text-muted">Pesanan Sedang diproses</p>
-
-                                                    <a href=""></a>
-                                                    <!-- Tombol aksi -->
-                                                    <div>
-                                                        <a href="<?= base_url('tukangin/services') ?>" class="btn btn-danger">Beli Lagi</a>
-                                                        <button class="btn btn-outline-secondary">Cetak Bukti</button>
-                                                        <button class="btn btn-outline-secondary">Testimoni</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endforeach ?>
-                            </div>
 
                             <!-- pesanan  -->
                             <div class="tab-pane fade pt-3" id="profile-pesanan-user">
@@ -316,8 +269,8 @@
                                                         <!-- Tombol aksi -->
                                                         <div>
                                                             <a href="<?= base_url('tukangin/services') ?>" class="btn btn-danger">Beli Lagi</a>
-                                                            <button class="btn btn-outline-secondary">Cetak Bukti</button>
-                                                            <a class="btn btn-outline-secondary" href="">Batalkan</a>
+                                                            <a href="<?= base_url('user/cetakPdf/' . $ti['id']) ?>" class="btn btn-outline-secondary">Cetak Bukti</a>
+                                                            <a class="btn btn-outline-secondary" href="<?= base_url('services/hapusPesanan/' . $ti['id']) ?>" onclick="return confirm('Yakin ingin menghapus pesanan ini?');">Batalkan</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -385,7 +338,7 @@
                                                                         </div>
 
                                                                         <!-- Modal Body -->
-                                                                        <form action="<?= base_url('user/tambahTest') ?>" method="post">
+                                                                        <form action="<?= base_url('user/tambahTestimoni') ?>" method="post" enctype="multipart/form-data">
                                                                             <div class="modal-body">
                                                                                 <div class="row align-items-center">
                                                                                     <!-- Profile Image Section -->
@@ -393,6 +346,7 @@
                                                                                         <div class="card" style="width: 100%;">
                                                                                             <img src="<?= base_url('assets/img/profile/') . $user['image'] ?>"
                                                                                                 alt="User Image" class="card-img-top">
+                                                                                            <input name="img" id="img" type="hidden" value="<?= $user['image'] ?>">
                                                                                         </div>
                                                                                     </div>
 
@@ -418,24 +372,26 @@
                                                                                                 <div class="col-sm-6">
                                                                                                     <label for="metode" class="form-label ms-2">jabatan</label>
                                                                                                     <select name="jabatan" id="jabatan" class="jabatan form-select" aria-label="Pilih sesuai jabatan anda">
-                                                                                                        <option selected>Pilih Jabatan</option>
+                                                                                                        <option value="Pilih Jabatan" <?= set_select('jabatan', 'Pilih Jabatan'); ?>>Pilih Jabatan</option>
                                                                                                         <?php foreach ($jabatan as $j) : ?>
-                                                                                                            <option value="<?= $j['id_jabatan']; ?>">
+                                                                                                            <option value="<?= $j['id_jabatan']; ?>" <?= set_select('jabatan', $j['id_jabatan']); ?>>
                                                                                                                 <?= $j['jabatan']; ?>
                                                                                                             </option>
                                                                                                         <?php endforeach; ?>
                                                                                                     </select>
+                                                                                                    <?= form_error('jabatan', '<small class="text-danger">', '</small>'); ?>
                                                                                                 </div>
                                                                                                 <div class="col-sm-6">
                                                                                                     <label for="metode" class="form-label ms-2">Bintang</label>
                                                                                                     <select name="bintang" id="bintang" class="bintang form-select" aria-label="Pilih jumlah bintang">
-                                                                                                        <option selected>Pilih jumlah bintang</option>
+                                                                                                        <option value="Pilih jumlah bintang" <?= set_select('bintang', 'Pilih jumlah bintang'); ?>>Pilih jumlah bintang</option>
                                                                                                         <?php foreach ($bintang as $b) : ?>
-                                                                                                            <option value="<?= $b['id_bintang']; ?>">
+                                                                                                            <option value="<?= $b['id_bintang']; ?>" <?= set_select('bintang', $b['id_bintang']); ?>>
                                                                                                                 <?= $b['bintang']; ?>
                                                                                                             </option>
                                                                                                         <?php endforeach; ?>
                                                                                                     </select>
+                                                                                                    <?= form_error('bintang', '<small class="text-danger">', '</small>'); ?>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!-- Testimoni -->
@@ -451,7 +407,7 @@
                                                                             <!-- Modal Footer -->
                                                                             <div class="modal-footer">
                                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                                <button type="submit" class="btn btn-primary">Save changes</button>
                                                                             </div>
                                                                         </form>
 
