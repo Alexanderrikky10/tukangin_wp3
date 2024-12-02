@@ -31,7 +31,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
                             <i class="bi bi-telephone"></i>
-                            <h3>Call Us</h3>
+                            <h3>Call Us | Whatsapp</h3>
                             <a href="https://wa.me/6281346699080?">
                                 <p>+62 8134 66990 80</p>
                             </a>
@@ -54,7 +54,8 @@
                     </div><!-- End Google Maps -->
 
                     <div class="col-lg-6">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
+                        <form action="" method="post" class="php-email-form">
+
                             <div class="row gy-4">
 
                                 <div class="col-md-6">

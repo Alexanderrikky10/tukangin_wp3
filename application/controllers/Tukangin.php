@@ -63,11 +63,6 @@ class Tukangin extends CI_Controller
         $this->load_template('template/v-project', $data);
     }
 
-    public function blog()
-    {
-        $data['title'] = 'Blog';
-        $this->load_template('template/v-blog', $data);
-    }
 
     public function contact()
     {

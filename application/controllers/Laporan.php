@@ -31,6 +31,15 @@ class Laporan extends CI_Controller
         // nama file pdf yang dihasilkan
     }
 
+    public function cetakExcel()
+    {
+        $data = array(
+            'title' => 'Laporan Transaksi Selesai',
+            'transaksi' => $this->Model_transaksi->cetakTransaksi()
+        );
+        $this->load->view('laporan/export-excel-transisi', $data);
+    }
+
     // cetak di dalam jasa melalui jasa yang si inginkan
     public function cetakTransaksiById($no_transaksi)
     {

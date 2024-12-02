@@ -14,7 +14,7 @@
         <div class="col-lg-8 mx-auto">
 
             <!-- Flash Message -->
-            <?= $this->session->flashdata('message'); ?>
+            <div class="text-center"><?= $this->session->flashdata('message'); ?></div>
 
             <!-- Button Tambah Metode Bayar -->
             <div class="d-flex justify-content-between align-items-center mb-3">
