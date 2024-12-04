@@ -163,7 +163,7 @@ class User extends CI_Controller
             $new_password = $this->input->post('new_password1');
             if (!password_verify($current_password, $data['user']['password'])) {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger alert-message" role="alert">Password yang anda masukan salah </div>');
-                redirect('tukangin/profile');
+                redirect('admin/profile');
             } else {
                 if ($current_password == $new_password) {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger alert-message" role="alert">Password tidak boleh sama dengan password lama</div>');

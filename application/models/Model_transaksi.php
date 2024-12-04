@@ -117,6 +117,42 @@ class Model_transaksi extends CI_Model
         $query = $this->db->get();
         return $query->row_array();
     }
+
+    public function tambah_jasa($data)
+    {
+        $this->db->insert('jasa', $data);
+    }
+
+    public function getById($id)
+    {
+        return $this->db->get_where('jasa', ['id' => $id])->row_array();
+    }
+
+    public function updateJasa($id, $data)
+    {
+        $this->db->where('id', $id);
+        return $this->db->update('jasa', $data);
+    }
+
+    public function deleteJasa($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->delete('jasa');
+    }
+
+    public function getTotalPesananSelesai()
+    {
+        $this->db->where('status', 'selesai');
+        return $this->db->count_all_results('transaksi_selesai');
+    }
+
+    public function getTotalRevenue()
+    {
+        $this->db->select_sum('ttl_bayar');
+        $this->db->where('status', 'selesai');
+        $query = $this->db->get('transaksi_selesai');
+        return $query->row()->ttl_bayar; // Mengembalikan hasil penjumlahan
+    }
 }
 
 /* End of file: Model_transaksi.php */

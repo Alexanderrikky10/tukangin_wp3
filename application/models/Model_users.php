@@ -102,6 +102,13 @@ class Model_users extends CI_Model
     {
         return $this->db->get('user')->result_array();
     }
+
+    public function getCustomerCount()
+    {
+        $this->db->where('role_id', 2); // Role ID untuk customer
+        $this->db->from('user');
+        return $this->db->count_all_results(); // Mengembalikan jumlah baris
+    }
 }
 
 /* End of file: Model_users.php */

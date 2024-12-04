@@ -4,7 +4,7 @@ use FontLib\Table\Type\post;
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Auth extends CI_Controller
+class Auth2 extends CI_Controller
 {
 
 
@@ -124,18 +124,18 @@ class Auth extends CI_Controller
     {
         $config = [
             'protocol'  => 'smtp',
-            'smtp_host' => 'smtp.gmail.com',
-            'smtp_user' => 'tukanginaja123@gmail.com', // Ganti dengan email Anda
-            'smtp_pass' => 'vaxxslnfkzbtrrdm', // Ganti dengan password email Anda
-            'smtp_port' => 465, // Gunakan 465 untuk SSL, atau 587 untuk TLS
-            'smtp_crypto' => 'ssl', // Gunakan 'tls' atau 'ssl' sesuai kebutuhan
+            'smtp_host' => 'tls://smtp.gmail.com',
+            'smtp_user' => 'tukangin123@gmail.com',
+            'smtp_pass' => 'vaxxslnfkzbtrrdm',
+            'smtp_port' => 587,
             'mailtype'  => 'html',
             'charset'   => 'utf-8',
-            'wordwrap'  => true,
+            'newline'   => "\r\n"
         ];
-        $this->load->library('email', $config);
 
-        $this->email->from('tukanginaja123@gmail.com', 'Tukangin');
+        $this->email->initialize($config);
+
+        $this->email->from('tukangin123@gmail.com', 'Tukangin');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {

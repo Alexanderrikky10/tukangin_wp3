@@ -64,11 +64,6 @@
                                     } ?>" href="<?= base_url('tukangin/project') ?>">Projects</a>
                     </li>
                     <li>
-                        <a class="<?php if ($title == 'Blog') {
-                                        echo 'active';
-                                    } ?>" href="<?= base_url('tukangin/blog') ?>">Blog</a>
-                    </li>
-                    <li>
                         <a class="<?php if ($title == 'Contact') {
                                         echo 'active';
                                     } ?>" href="<?= base_url('tukangin/contact') ?>">Contact</a>

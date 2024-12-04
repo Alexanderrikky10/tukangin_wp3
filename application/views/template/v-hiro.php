@@ -117,12 +117,9 @@
 							</div>
 							<div class="col-xl-7 d-flex align-items-center">
 								<div class="card-body">
-									<h4 class="card-title">Error beatae dolor inventore aut</h4>
+									<h4 class="card-title">Layanan Konstruksi Berkualitas Tinggi</h4>
 									<p>
-										Dicta porro nobis. Velit cum in. Nesciunt dignissimos enim
-										molestiae facilis numquam quae quaerat ipsam omnis. Neque
-										debitis ipsum at architecto officia laboriosam odit. Ut sunt
-										temporibus nulla culpa.
+										Dicari jasa pertukangan terpercaya? Kami hadir untuk mewujudkan kebutuhan konstruksi Anda. Dengan tenaga ahli profesional dan material berkualitas, kami memastikan setiap proyek selesai dengan hasil terbaik. Kepuasan Anda adalah prioritas kami
 									</p>
 								</div>
 							</div>
@@ -141,12 +138,9 @@
 							</div>
 							<div class="col-xl-7 d-flex align-items-center">
 								<div class="card-body">
-									<h4 class="card-title">Expedita voluptas ut ut nesciunt</h4>
+									<h4 class="card-title">Membangun Impian, Menjaga Kualitas</h4>
 									<p>
-										Aut est quidem doloremque voluptatem magnam quis excepturi
-										vero quia. Eum eos doloremque architecto illo at beatae
-										dolore. Fugiat suscipit et sint ratione dolores. Aut aliquid
-										ea dolores libero nobis.
+										Kami memahami bahwa setiap proyek adalah investasi besar. Itulah mengapa kami memberikan perhatian khusus pada detail, mulai dari desain hingga pembangunan akhir. Percayakan rumah impian Anda kepada kami, ahli dalam dunia konstruksi dan renovasi.
 									</p>
 								</div>
 							</div>
@@ -166,26 +160,26 @@
 			<ul class="nav nav-tabs row g-2 d-flex" data-aos="fade-up" data-aos-delay="100" role="tablist">
 				<li class="nav-item col-3" role="presentation">
 					<a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
-						<h4>Modisit</h4>
+						<h4>Profesional dan Berpengalaman</h4>
 					</a>
 				</li>
 				<!-- End tab nav item -->
 
 				<li class="nav-item col-3" role="presentation">
 					<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" tabindex="-1" role="tab">
-						<h4>Praesenti</h4>
+						<h4>Solusi Cepat dan Mudah</h4>
 					</a><!-- End tab nav item -->
 				</li>
 				<li class="nav-item col-3" role="presentation">
 					<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3" aria-selected="false" tabindex="-1" role="tab">
-						<h4>Explica</h4>
+						<h4>Layanan Lengkap </h4>
 					</a>
 				</li>
 				<!-- End tab nav item -->
 
 				<li class="nav-item col-3" role="presentation">
 					<a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" tabindex="-1" role="tab">
-						<h4>Nostrum</h4>
+						<h4>Transparansi </h4>
 					</a>
 				</li>
 				<!-- End tab nav item -->
@@ -195,28 +189,23 @@
 				<div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
 					<div class="row">
 						<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-							<h3>Voluptatem dignissimos provident</h3>
+							<h3>Tukang Berpengalaman, Hasil Berkualitas</h3>
 							<p class="fst-italic">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Kami bekerja dengan tim tukang yang terlatih dan berpengalaman di bidangnya. Setiap pekerjaan dilakukan dengan detail dan ketelitian tinggi untuk memastikan hasil sesuai ekspektasi Anda.
 							</p>
 							<ul>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Ullamco laboris nisi ut aliquip ex ea commodo
-										consequat.</span>
+									<span>Tukang terlatih dengan pengalaman bertahun-tahun.</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Duis aute irure dolor in reprehenderit in voluptate
-										velit.</span>
+									<span>Kualitas hasil pekerjaan dijamin memuaskan.</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-										Duis aute irure dolor in reprehenderit in voluptate trideta
-										storacalaperda mastiro dolore eu fugiat nulla
-										pariatur.</span>
+									<span>Pengawasan ketat selama proses pengerjaan.
+									</span>
 									<!-- jangan lupa di gunkan fungtion baru  -->
 								</li>
 							</ul>
@@ -231,33 +220,23 @@
 				<div class="tab-pane fade" id="features-tab-2" role="tabpanel">
 					<div class="row">
 						<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-							<h3>Neque exercitationem debitis</h3>
+							<h3>Proses Cepat dan Praktis</h3>
 							<p class="fst-italic">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Cukup beberapa klik, Anda dapat memesan jasa pertukangan sesuai kebutuhan. Sistem kami dirancang untuk memudahkan Anda, mulai dari pemesanan hingga pembayaran.
 							</p>
 							<ul>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Ullamco laboris nisi ut aliquip ex ea commodo
-										consequat.</span>
+									<span>Pemesanan online yang mudah dan cepat</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Duis aute irure dolor in reprehenderit in voluptate
-										velit.</span>
+									<span>Tersedia kapan saja, di mana saja.</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Provident mollitia neque rerum asperiores dolores quos qui
-										a. Ipsum neque dolor voluptate nisi sed.</span>
-								</li>
-								<li>
-									<i class="bi bi-check2-all"></i>
-									<span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-										Duis aute irure dolor in reprehenderit in voluptate trideta
-										storacalaperda mastiro dolore eu fugiat nulla
-										pariatur.</span>
+									<span>Notifikasi real-time untuk memantau pesanan Anda.
+									</span>
 								</li>
 							</ul>
 						</div>
@@ -271,27 +250,27 @@
 				<div class="tab-pane fade" id="features-tab-3" role="tabpanel">
 					<div class="row">
 						<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-							<h3>Voluptatibus commodi accusamu</h3>
+							<h3>Semua Kebutuhan Pertukangan dalam Satu Tempat</h3>
 							<ul>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Ullamco laboris nisi ut aliquip ex ea commodo
-										consequat.</span>
+									<span>Tukangin menyediakan berbagai layanan, mulai dari perbaikan kecil, renovasi rumah, hingga pembangunan skala besar. Tidak perlu mencari tempat lain!</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Duis aute irure dolor in reprehenderit in voluptate
-										velit.</span>
+									<span>Layanan mulai dari perbaikan kecil hingga renovasi besar.</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Provident mollitia neque rerum asperiores dolores quos qui
-										a. Ipsum neque dolor voluptate nisi sed.</span>
+									<span>Material berkualitas tinggi untuk hasil terbaik.</span>
+								</li>
+								<li>
+									<i class="bi bi-check2-all"></i>
+									<span>Dukungan teknis selama proyek berjalan.</span>
 								</li>
 							</ul>
 							<p class="fst-italic">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Tukangin bisa anda andalkan dalam setiap permasalahan pertukangan yang anda alami.
 							</p>
 						</div>
 						<div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -304,28 +283,22 @@
 				<div class="tab-pane fade" id="features-tab-4" role="tabpanel">
 					<div class="row">
 						<div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-							<h3>Omnis fugiat ea explicabo sunt</h3>
+							<h3>Harga Transparan, Kepuasan Terjamin</h3>
 							<p class="fst-italic">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-								eiusmod tempor incididunt ut labore et dolore magna aliqua.
+								Kami menjamin harga yang transparan tanpa biaya tersembunyi, serta menyediakan garansi untuk setiap pekerjaan. Kepuasan pelanggan adalah prioritas kami!
 							</p>
 							<ul>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Ullamco laboris nisi ut aliquip ex ea commodo
-										consequat.</span>
+									<span>Harga sesuai kesepakatan tanpa biaya tambahan.</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Duis aute irure dolor in reprehenderit in voluptate
-										velit.</span>
+									<span>Garansi untuk pekerjaan yang selesai.</span>
 								</li>
 								<li>
 									<i class="bi bi-check2-all"></i>
-									<span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.
-										Duis aute irure dolor in reprehenderit in voluptate trideta
-										storacalaperda mastiro dolore eu fugiat nulla
-										pariatur.</span>
+									<span>Tim siap membantu jika ada kendala pasca-proyek.</span>
 								</li>
 							</ul>
 						</div>
@@ -346,8 +319,9 @@
 		<div class="container section-title" data-aos="fade-up">
 			<h2>Projects</h2>
 			<p>
-				Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-				consectetur velit
+				Temukan berbagai hasil karya terbaik kami dalam jasa pertukangan dan desain rumah.
+				Dari renovasi hingga pembangunan baru, setiap proyek kami cerminkan kualitas
+				dan dedikasi untuk memenuhi kebutuhan Anda.
 			</p>
 		</div>
 		<!-- End Section Title -->
@@ -362,6 +336,8 @@
 					<li data-filter=".filter-construction">Construction</li>
 					<li data-filter=".filter-repairs">Repairs</li>
 					<li data-filter=".filter-design">Design</li>
+					<li data-filter=".filter-Decluttering">Decluttering</li>
+					<li data-filter=".filter-Painting">Painting & Finishing</li>
 				</ul><!-- End Portfolio Filters -->
 
 				<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -396,8 +372,7 @@
 		<div class="container section-title" data-aos="fade-up">
 			<h2>Testimonials</h2>
 			<p>
-				Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-				consectetur velit
+				Dengarkan cerita dari pelanggan kami yang telah merasakan manfaat menggunakan layanan jasa pertukangan kami. Kepuasan mereka adalah bukti komitmen kami dalam memberikan hasil terbaik.
 			</p>
 		</div>
 		<!-- End Section Title -->
@@ -462,117 +437,4 @@
 		</div>
 	</section>
 	<!-- /Testimonials Section -->
-
-	<!-- Recent Blog Posts Section -->
-	<section id="recent-blog-posts" class="recent-blog-posts section">
-		<!-- Section Title -->
-		<div class="container section-title" data-aos="fade-up">
-			<h2>Recent Blog Posts</h2>
-			<p>
-				Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-				consectetur velit
-			</p>
-		</div>
-		<!-- End Section Title -->
-
-		<div class="container">
-			<div class="row gy-5">
-				<div class="col-xl-4 col-md-6">
-					<div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
-						<div class="post-img position-relative overflow-hidden">
-							<img src="<?= base_url('assets/') ?>img/blog/blog-1.jpg" class="img-fluid" alt="" />
-							<span class="post-date">December 12</span>
-						</div>
-
-						<div class="post-content d-flex flex-column">
-							<h3 class="post-title">
-								Eum ad dolor et. Autem aut fugiat debitis
-							</h3>
-
-							<div class="meta d-flex align-items-center">
-								<div class="d-flex align-items-center">
-									<i class="bi bi-person"></i>
-									<span class="ps-2">Julia Parker</span>
-								</div>
-								<span class="px-3 text-black-50">/</span>
-								<div class="d-flex align-items-center">
-									<i class="bi bi-folder2"></i>
-									<span class="ps-2">Politics</span>
-								</div>
-							</div>
-
-							<hr />
-
-							<a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- End post item -->
-
-				<div class="col-xl-4 col-md-6">
-					<div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
-						<div class="post-img position-relative overflow-hidden">
-							<img src="<?= base_url('assets/') ?>img/blog/blog-2.jpg" class="img-fluid" alt="" />
-							<span class="post-date">July 17</span>
-						</div>
-
-						<div class="post-content d-flex flex-column">
-							<h3 class="post-title">
-								Et repellendus molestiae qui est sed omnis
-							</h3>
-
-							<div class="meta d-flex align-items-center">
-								<div class="d-flex align-items-center">
-									<i class="bi bi-person"></i>
-									<span class="ps-2">Mario Douglas</span>
-								</div>
-								<span class="px-3 text-black-50">/</span>
-								<div class="d-flex align-items-center">
-									<i class="bi bi-folder2"></i> <span class="ps-2">Sports</span>
-								</div>
-							</div>
-
-							<hr />
-
-							<a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- End post item -->
-
-				<div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-					<div class="post-item position-relative h-100">
-						<div class="post-img position-relative overflow-hidden">
-							<img src="<?= base_url('assets/') ?>img/blog/blog-3.jpg" class="img-fluid" alt="" />
-							<span class="post-date">September 05</span>
-						</div>
-
-						<div class="post-content d-flex flex-column">
-							<h3 class="post-title">
-								Quia assumenda est et veritati tirana ploder
-							</h3>
-
-							<div class="meta d-flex align-items-center">
-								<div class="d-flex align-items-center">
-									<i class="bi bi-person"></i>
-									<span class="ps-2">Lisa Hunter</span>
-								</div>
-								<span class="px-3 text-black-50">/</span>
-								<div class="d-flex align-items-center">
-									<i class="bi bi-folder2"></i>
-									<span class="ps-2">Economics</span>
-								</div>
-							</div>
-
-							<hr />
-
-							<a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- End post item -->
-			</div>
-		</div>
-	</section>
-	<!-- /Recent Blog Posts Section -->
 </main>

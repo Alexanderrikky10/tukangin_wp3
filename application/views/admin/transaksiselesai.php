@@ -10,9 +10,15 @@
             </nav>
         </div>
         <!-- Tombol Download PDF -->
-        <a href="<?= base_url('laporan'); ?>" class="btn btn-warning btn-sm shadow-sm">
-            <i class="far fa-file-pdf"></i> Download PDF
-        </a>
+        <div class="text-center"><?= $this->session->flashdata('message'); ?></div>
+        <div class="d-flex">
+            <a href="<?= base_url('laporan'); ?>" class="btn btn-warning btn-sm shadow-sm me-2">
+                <i class="far fa-file-pdf"></i> Download PDF
+            </a>
+            <a href="<?= base_url('laporan/cetakExcel'); ?>" class="btn btn-info btn-sm shadow-sm">
+                <i class="far fa-file-excel"></i> Download Excel
+            </a>
+        </div>
     </div><!-- End Page Title -->
 
     <div class="col-xl-12 mt-3">

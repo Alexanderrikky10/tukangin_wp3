@@ -24,29 +24,17 @@
                     <h4>Useful Links</h4>
                     <ul>
                         <li><a href="<?= base_url('tukangin') ?>">Home</a></li>
-                        <li><a href="<?= base_url('tukangin/about') ?>">About us</a></li>
                         <li><a href="<?= base_url('tukangin/services') ?>">Services</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Story</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="<?= base_url('tukangin/about') ?>">Story</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="#">Web Design</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Product Management</a></li>
-                        <li><a href="#">Marketing</a></li>
-                        <li><a href="#">Graphic Design</a></li>
-                    </ul>
-                </div>
 
                 <div class="col-lg-2 col-md-3 footer-links">
                     <h4>Customer Support</h4>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="<?= base_url('tukangin/contact') ?>">Contact Us</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Refund Policy</a></li>
                         <li><a href="#">User Guide</a></li>

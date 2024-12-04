@@ -8,6 +8,7 @@
             </ol>
         </nav>
     </div><!-- End Page Title -->
+    <div class="text-center"><?= $this->session->flashdata('message'); ?></div>
     <div class="container">
         <div class="d-flex justify-content-end mb-3">
             <a href="<?= base_url('laporan/cetakUser') ?>" class="btn btn-success">
@@ -48,7 +49,10 @@
                                         <?= $user['role_id'] == 1 ? '<span class="badge bg-success">Admin</span>' : '<span class="badge bg-info">User</span>'; ?>
                                     </td>
                                     <td>
-                                        <?= $user['is_active'] ? '<span class="badge bg-success">Aktif</span>' : '<span class="badge bg-danger">Nonaktif</span>'; ?>
+                                        <form action="<?= base_url('admin/updateStatus'); ?>" method="POST">
+                                            <input type="hidden" name="id" value="<?= $user['id']; ?>">
+                                            <input type="checkbox" name="is_active" onchange="this.form.submit()" <?= $user['is_active'] ? 'checked' : ''; ?>>
+                                        </form>
                                     </td>
                                     <td><?= $user['alamat']; ?></td>
                                     <td><?= $user['tlp']; ?></td>
