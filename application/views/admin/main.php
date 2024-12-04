@@ -95,6 +95,10 @@
                                                     <th>Nomor Pesanan</th>
                                                     <th>Tanggal transaksi</th>
                                                     <th>Email Kastemer</th>
+<<<<<<< HEAD
+=======
+                                                    <th>Bukti Bayar</th>
+>>>>>>> f7ffd34fa33f399e4a228e3e60dee7af197ace66
                                                     <th>Action</th>
                                                     <th>Total Bayar</th>
                                                     <th>Jam Pesanan</th>
@@ -126,6 +130,15 @@
                                                             <input type="hidden" name="tgl" id="tgl" value="<?= $t->tgl ?>">
                                                             <!-- end data post -->
                                                             <td nowrap>
+<<<<<<< HEAD
+=======
+                                                                <img src="<?= base_url('assets/img/transaksi/') . $t->image ?>" alt="Gambar User" class="img-fluid">
+                                                                <div class="portfolio-info">
+                                                                    <a href="<?= base_url('assets/img/transaksi/') . $t->image ?>" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                                                </div>
+                                                            </td>
+                                                            <td nowrap>
+>>>>>>> f7ffd34fa33f399e4a228e3e60dee7af197ace66
                                                                 <button type="submit" class="btn btn-sm btn-outline-info"><i class="bi bi-check-circle-fill"></i> </i>Konfimasi</button>
                                                             </td>
                                                             <td>
