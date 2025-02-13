@@ -8,7 +8,7 @@
                         <th><?= $at['name']; ?></th>
                     </tr>
                     <tr>
-                        <td>ID Booking</td>
+                        <td>No Pesanan</td>
                         <td>:</td>
                         <th><?= $at['id']; ?></th>
                     </tr>

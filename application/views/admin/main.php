@@ -127,13 +127,22 @@
                                                             <input type="hidden" name="tgl" id="tgl" value="<?= $t->tgl ?>">
                                                             <!-- end data post -->
                                                             <td nowrap>
-                                                                <img src="<?= base_url('assets/img/transaksi/') . $t->image ?>" alt="Gambar User" class="img-fluid">
-                                                                <div class="portfolio-info">
-                                                                    <a href="<?= base_url('assets/img/transaksi/') . $t->image ?>" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                                                                <div class="d-flex justify-content-center align-items-center">
+                                                                    <a href="<?= base_url('assets/img/transaksi/') . $t->image ?>"
+                                                                        title=""
+                                                                        data-gallery="portfolio-gallery-app"
+                                                                        class="glightbox preview-link btn btn-lg btn-outline-primary">
+                                                                        <i class="bi bi-zoom-in"></i>
+                                                                    </a>
                                                                 </div>
                                                             </td>
                                                             <td nowrap>
                                                                 <button type="submit" class="btn btn-sm btn-outline-info"><i class="bi bi-check-circle-fill"></i> </i>Konfimasi</button>
+                                                                <a href="<?= base_url('admin/hapusTransaksi/') . $t->id; ?>"
+                                                                    class="btn btn-sm btn-outline-danger"
+                                                                    onclick="return confirm('Apakah Anda yakin ingin menghapus transaksi ini?');">
+                                                                    <i class="bi bi-trash-fill"></i> Hapus
+                                                                </a>
                                                             </td>
                                                             <td>
                                                                 <input class="form-control rounded-sm" type="text" name="denda" id="denda" readonly value="Rp.<?= number_format($t->total_bayar); ?>">

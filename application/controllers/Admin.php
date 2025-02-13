@@ -27,6 +27,23 @@ class Admin extends CI_Controller
         $this->load->view('admin/footer_admin');
     }
 
+    public function hapusTransaksi($id)
+    {
+        // Pastikan ID diterima
+        if (!$id) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger">ID Transaksi tidak valid.</div>');
+            redirect('admin');
+        }
+        // Hapus data melalui model
+        if ($this->Model_transaksi->deleteTransaksi($id)) {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning alert-message" role="alert">Transaksi berhasil dihapus!</div>');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning alert-message" role="alert">Gagal menghapus Transaksi. Silakan coba lagi.</div>');
+        }
+
+        // Kembali ke halaman admin
+        redirect('admin');
+    }
 
     public function profile()
     {

@@ -153,6 +153,12 @@ class Model_transaksi extends CI_Model
         $query = $this->db->get('transaksi_selesai');
         return $query->row()->ttl_bayar; // Mengembalikan hasil penjumlahan
     }
+
+    public function deleteTransaksi($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->delete('transaksi');
+    }
 }
 
 /* End of file: Model_transaksi.php */
