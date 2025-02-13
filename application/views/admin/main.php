@@ -95,7 +95,10 @@
                                                     <th>Nomor Pesanan</th>
                                                     <th>Tanggal transaksi</th>
                                                     <th>Email Kastemer</th>
+<<<<<<< HEAD
+=======
                                                     <th>Bukti Bayar</th>
+>>>>>>> f7ffd34fa33f399e4a228e3e60dee7af197ace66
                                                     <th>Action</th>
                                                     <th>Total Bayar</th>
                                                     <th>Jam Pesanan</th>
@@ -127,6 +130,7 @@
                                                             <input type="hidden" name="tgl" id="tgl" value="<?= $t->tgl ?>">
                                                             <!-- end data post -->
                                                             <td nowrap>
+<<<<<<< HEAD
                                                                 <div class="d-flex justify-content-center align-items-center">
                                                                     <a href="<?= base_url('assets/img/transaksi/') . $t->image ?>"
                                                                         title=""
@@ -134,9 +138,17 @@
                                                                         class="glightbox preview-link btn btn-lg btn-outline-primary">
                                                                         <i class="bi bi-zoom-in"></i>
                                                                     </a>
+=======
+<<<<<<< HEAD
+=======
+                                                                <img src="<?= base_url('assets/img/transaksi/') . $t->image ?>" alt="Gambar User" class="img-fluid">
+                                                                <div class="portfolio-info">
+                                                                    <a href="<?= base_url('assets/img/transaksi/') . $t->image ?>" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+>>>>>>> ffe7079dcd558562a7baf470d8ecca3a035ead2a
                                                                 </div>
                                                             </td>
                                                             <td nowrap>
+>>>>>>> f7ffd34fa33f399e4a228e3e60dee7af197ace66
                                                                 <button type="submit" class="btn btn-sm btn-outline-info"><i class="bi bi-check-circle-fill"></i> </i>Konfimasi</button>
                                                                 <a href="<?= base_url('admin/hapusTransaksi/') . $t->id; ?>"
                                                                     class="btn btn-sm btn-outline-danger"

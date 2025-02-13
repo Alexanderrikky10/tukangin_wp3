@@ -66,8 +66,13 @@ define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'developm
  */
 switch (ENVIRONMENT) {
 	case 'development':
+<<<<<<< HEAD
+		// error_reporting(-1);
+		error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
+=======
 		error_reporting(-1);
 		// error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT & ~E_NOTICE);
+>>>>>>> f7ffd34fa33f399e4a228e3e60dee7af197ace66
 		ini_set('display_errors', 1);
 		break;
 
